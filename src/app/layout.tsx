@@ -81,6 +81,15 @@ export const metadata: Metadata = {
       'Full-stack developer. Systems thinker. Interactive 3D portfolio experience.',
   },
   robots: { index: true, follow: true },
+  icons: {
+    icon: [
+      { url: '/icon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.ico', sizes: '32x32' },
+    ],
+    apple: [
+      { url: '/apple-icon.png', sizes: '192x192', type: 'image/png' },
+    ],
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
