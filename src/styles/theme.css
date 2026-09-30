@@ -1,0 +1,209 @@
+/* ============================================
+   DESIGN TOKENS — Dual-Theme Portfolio
+   ============================================
+   Theme switching via data-theme attribute on <html>
+   Default: Retro 32-Bit (primary build)
+   ============================================ */
+
+/* ---- Retro 32-Bit Theme (Mega Man Zero Light Theme) ---- */
+:root,
+[data-theme="retro"] {
+  /* Backgrounds: Warm retro paper cream (#F5F2EB) from lovable */
+  --bg-primary: #F5F2EB;
+  --bg-secondary: #FFFFFF;
+  --bg-tertiary: #EBE7DE;
+  --surface: #E4DFD3;
+  --border: #0F172A;
+  --border-subtle: #D6D0C4;
+
+  /* Accent Colors from Mega Man Zero Artwork */
+  --accent-primary: #E11D48;       /* Zero Crimson Red (Armor/Helmet) */
+  --accent-secondary: #00D26A;     /* Z-Saber Emerald Green (Laser Blade) */
+  --accent-tertiary: #0284C7;      /* Electric Ice Blue (Energy Whip) */
+  --accent-warning: #EA580C;       /* Cyber Blaze Orange */
+  --accent-special: #7C3AED;       /* Void Purple (Energy Swirls) */
+  --accent-gold: #D97706;          /* Blonde Hair & Golden Crests */
+
+  /* Text Colors (High-contrast, razor-sharp readable) */
+  --text-primary: #0F172A;
+  --text-secondary: #334155;
+  --text-dim: #64748B;
+
+  /* Font Families (set by next/font CSS variables) */
+  --font-heading: var(--font-press-start), monospace;
+  --font-subheading: var(--font-silkscreen), monospace;
+  --font-display: var(--font-bebas-neue), 'Impact', 'Outfit', sans-serif;
+  --font-body: var(--font-ibm-plex-mono), monospace;
+  --font-code: var(--font-jetbrains-mono), monospace;
+
+  /* Gradients */
+  --gradient-energy: linear-gradient(90deg, #E11D48 0%, #D97706 50%, #00D26A 100%);
+  --gradient-saber: linear-gradient(135deg, #00D26A 0%, #0284C7 100%);
+  --gradient-level: linear-gradient(135deg, #E11D48 0%, #7C3AED 100%);
+  --gradient-hero: radial-gradient(ellipse at 50% 20%, rgba(225, 29, 72, 0.08) 0%, rgba(0, 210, 106, 0.06) 50%, transparent 80%);
+
+  /* Overlays */
+  --scanline-overlay: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(15, 23, 42, 0.03) 2px,
+    rgba(15, 23, 42, 0.03) 4px
+  );
+  --pixel-grid: repeating-linear-gradient(
+    0deg, rgba(15, 23, 42, 0.03) 0px, transparent 1px, transparent 4px
+  ),
+  repeating-linear-gradient(
+    90deg, rgba(15, 23, 42, 0.03) 0px, transparent 1px, transparent 4px
+  );
+
+  /* Shadows (solid ink pixel drop shadows) */
+  --shadow-sm: 2px 2px 0px var(--border);
+  --shadow-md: 4px 4px 0px var(--border);
+  --shadow-lg: 6px 6px 0px var(--border);
+  --shadow-red: 4px 4px 0px var(--accent-primary);
+  --shadow-green: 4px 4px 0px var(--accent-secondary);
+
+  /* Glow Effects (adjusted for light theme readability) */
+  --glow-blue: 0 0 10px rgba(2, 132, 199, 0.4), 0 0 20px rgba(2, 132, 199, 0.15);
+  --glow-pink: 0 0 10px rgba(225, 29, 72, 0.4), 0 0 20px rgba(225, 29, 72, 0.15);
+  --glow-green: 0 0 10px rgba(0, 210, 106, 0.45), 0 0 20px rgba(0, 210, 106, 0.15);
+  --glow-gold: 0 0 10px rgba(217, 119, 6, 0.4), 0 0 20px rgba(217, 119, 6, 0.15);
+  --glow-purple: 0 0 10px rgba(124, 58, 237, 0.4), 0 0 20px rgba(124, 58, 237, 0.15);
+
+  /* Border Style */
+  --border-style: 2px solid var(--border);
+  --border-radius: 0px; /* Pixel-perfect, no rounding */
+
+  /* Transitions (snappy for retro feel) */
+  --transition-fast: 100ms step-end;
+  --transition-normal: 200ms step-end;
+}
+
+/* ---- Sleek 3D Theme ---- */
+[data-theme="sleek"] {
+  /* Backgrounds */
+  --bg-primary: #09090B;
+  --bg-secondary: #111114;
+  --bg-tertiary: #1C1C22;
+  --surface: #27272A;
+  --border: #3F3F46;
+
+  /* Accent Colors */
+  --accent-primary: #06B6D4;       /* Cyan */
+  --accent-secondary: #EC4899;     /* Magenta */
+  --accent-tertiary: #10B981;      /* Emerald */
+  --accent-warning: #F59E0B;       /* Amber */
+  --accent-special: #8B5CF6;       /* Violet */
+  --accent-gold: #3B82F6;          /* Electric Blue (used for links) */
+
+  /* Text Colors */
+  --text-primary: #FAFAFA;
+  --text-secondary: #A1A1AA;
+  --text-dim: #71717A;
+
+  /* Font Families */
+  --font-heading: var(--font-outfit), sans-serif;
+  --font-subheading: var(--font-inter), sans-serif;
+  --font-body: var(--font-inter), sans-serif;
+  --font-code: var(--font-jetbrains-mono), monospace;
+
+  /* Gradients */
+  --gradient-energy: linear-gradient(135deg, #06B6D4 0%, #3B82F6 50%, #8B5CF6 100%);
+  --gradient-level: linear-gradient(135deg, rgba(139,92,246,0.1) 0%, rgba(236,72,153,0.1) 100%);
+  --gradient-hero: radial-gradient(ellipse at 50% 50%, rgba(6,182,212,0.15) 0%, transparent 70%);
+
+  /* Overlays (none for sleek) */
+  --scanline-overlay: none;
+  --pixel-grid: none;
+
+  /* Shadows (smooth, depth-based) */
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.3);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.4);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,0.5);
+
+  /* Glow Effects */
+  --glow-blue: 0 0 40px rgba(6, 182, 212, 0.15);
+  --glow-pink: 0 0 40px rgba(236, 72, 153, 0.15);
+  --glow-green: 0 0 40px rgba(16, 185, 129, 0.15);
+  --glow-gold: 0 0 40px rgba(59, 130, 246, 0.15);
+
+  /* Border Style */
+  --border-style: 1px solid rgba(255, 255, 255, 0.05);
+  --border-radius: 12px;
+
+  /* Transitions (smooth for sleek) */
+  --transition-fast: 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 300ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ============================================
+   FLUID TYPOGRAPHY SCALE
+   ============================================ */
+:root {
+  --text-xs:   clamp(0.694rem, 0.66rem + 0.17vw, 0.8rem);
+  --text-sm:   clamp(0.833rem, 0.78rem + 0.27vw, 1rem);
+  --text-base: clamp(1rem, 0.93rem + 0.36vw, 1.25rem);
+  --text-lg:   clamp(1.2rem, 1.1rem + 0.5vw, 1.563rem);
+  --text-xl:   clamp(1.44rem, 1.3rem + 0.7vw, 1.953rem);
+  --text-2xl:  clamp(1.728rem, 1.54rem + 0.94vw, 2.441rem);
+  --text-3xl:  clamp(2.074rem, 1.81rem + 1.32vw, 3.052rem);
+  --text-hero: clamp(2.488rem, 2.12rem + 1.84vw, 3.815rem);
+}
+
+/* ============================================
+   SPACING SCALE
+   ============================================ */
+:root {
+  --sp-1:  0.25rem;   /* 4px */
+  --sp-2:  0.5rem;    /* 8px */
+  --sp-3:  0.75rem;   /* 12px */
+  --sp-4:  1rem;      /* 16px */
+  --sp-6:  1.5rem;    /* 24px */
+  --sp-8:  2rem;      /* 32px */
+  --sp-12: 3rem;      /* 48px */
+  --sp-16: 4rem;      /* 64px */
+  --sp-24: 6rem;      /* 96px */
+  --sp-32: 8rem;      /* 128px */
+}
+
+/* ============================================
+   ANIMATION TOKENS
+   ============================================ */
+:root {
+  --ease-out-expo:  cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-in-out:    cubic-bezier(0.45, 0, 0.55, 1);
+  --ease-spring:    cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  --duration-fast:   150ms;
+  --duration-normal: 300ms;
+  --duration-slow:   500ms;
+  --duration-scroll: 800ms;
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media (prefers-contrast: high) {
+  :root,
+  [data-theme="retro"],
+  [data-theme="sleek"] {
+    --bg-primary: #000000;
+    --bg-secondary: #0A0A0A;
+    --text-primary: #FFFFFF;
+    --text-secondary: #CCCCCC;
+    --border: #FFFFFF;
+  }
+}

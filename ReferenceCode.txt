@@ -1,0 +1,667 @@
+//index.tsx
+import { createFileRoute } from "@tanstack/react-router";
+import portrait from "@/assets/portrait-ajay-original-style.png";
+
+export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Ajay Kumar DRB — Full-Stack Developer Portfolio" },
+      {
+        name: "description",
+        content:
+          "Full-stack developer // Systems thinker // Recovering QA. Career chronicles, boss battles and the tech skill tree of Ajay Kumar DRB — in glorious 32-bit.",
+      },
+      {
+        property: "og:title",
+        content: "Ajay Kumar DRB — Full-Stack Developer Portfolio",
+      },
+      {
+        property: "og:description",
+        content:
+          "Career chronicles, boss battles and the tech skill tree of Ajay Kumar DRB — in glorious 32-bit.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
+  component: Index,
+});
+
+const NAV = [
+  { id: "home", num: "01", label: "HOME" },
+  { id: "path", num: "02", label: "PATH" },
+  { id: "bosses", num: "03", label: "BOSSES" },
+  { id: "weapons", num: "04", label: "WEAPONS" },
+  { id: "comms", num: "05", label: "COMMS" },
+];
+
+const LEVELS = [
+  {
+    lv: "LV.07 · 2018 — 2020",
+    pct: 100,
+    bar: "bg-jade",
+    title: "The Foundation · Engineering Academy",
+    text: "Mechanical engineering student. Studied thermodynamics, fluid mechanics and control systems — learned to think in systems and how small failures cascade.",
+  },
+  {
+    lv: "LV.05 · 2020 — 2022",
+    pct: 85,
+    bar: "bg-royal",
+    title: "Quality Gates · QA @ Chella Software",
+    text: "Transitioned into software through quality assurance. Wrote test automation frameworks and learned to break systems before users do.",
+  },
+  {
+    lv: "LV.09 · 2022 — NOW",
+    pct: 62,
+    bar: "bg-crimson",
+    title: "The Ascent · Full-Stack Developer",
+    text: "Architecting scalable full-stack applications with systems thinking, clean code rigor and mechanical-engineering precision.",
+  },
+];
+
+const BOSSES = [
+  {
+    name: "SaaS Integration Platform",
+    sub: "Full-featured SaaS platform · drag-and-drop automation",
+    desc: "Connects third-party APIs with a visual pipeline builder. Real-time data sync, webhook management and a workflow engine for business automation.",
+    stats: [
+      { k: "ATK", v: 90, c: "bg-royal" },
+      { k: "DEF", v: 85, c: "bg-jade" },
+      { k: "SPD", v: 80, c: "bg-amber-hud" },
+      { k: "MAG", v: 75, c: "bg-crimson" },
+    ],
+    tags: ["NEXT.JS", "NESTJS", "POSTGRESQL", "REDIS", "DOCKER"],
+    stars: 5,
+  },
+  {
+    name: "Real-Time Analytics Dashboard",
+    sub: "Interactive analytics · live-updating charts",
+    desc: "Customizable widgets with data export. Handles 10K+ events per second over WebSocket streaming without breaking a sweat.",
+    stats: [
+      { k: "ATK", v: 80, c: "bg-royal" },
+      { k: "DEF", v: 90, c: "bg-jade" },
+      { k: "SPD", v: 95, c: "bg-amber-hud" },
+      { k: "MAG", v: 70, c: "bg-crimson" },
+    ],
+    tags: ["REACT", "TYPESCRIPT", "D3.JS", "NODE.JS", "MONGODB"],
+    stars: 5,
+  },
+];
+
+const SKILLS = [
+  { abbr: "TS", name: "TYPESCRIPT", bg: "bg-royal", text: "text-paper" },
+  { abbr: "R", name: "REACT", bg: "bg-crimson", text: "text-paper" },
+  { abbr: "N", name: "NEXT.JS", bg: "bg-ink", text: "text-cream" },
+  { abbr: "PY", name: "PYTHON", bg: "bg-amber-hud", text: "text-ink" },
+  { abbr: "NE", name: "NESTJS", bg: "bg-crimson", text: "text-paper" },
+  { abbr: "GQ", name: "GRAPHQL", bg: "bg-jade", text: "text-paper" },
+  { abbr: "RT", name: "REST APIS", bg: "bg-royal", text: "text-paper" },
+  { abbr: "PG", name: "POSTGRESQL", bg: "bg-ink", text: "text-cream" },
+  { abbr: "DK", name: "DOCKER", bg: "bg-royal", text: "text-paper" },
+  { abbr: "GH", name: "GITHUB ACTIONS", bg: "bg-crimson", text: "text-paper" },
+  { abbr: "QA", name: "JEST / QA", bg: "bg-jade", text: "text-paper" },
+  { abbr: "TW", name: "TAILWIND CSS", bg: "bg-amber-hud", text: "text-ink" },
+];
+
+const CHANNELS = [
+  { label: "GITHUB", value: "/ajaykumardrb", color: "text-crimson", href: "#" },
+  { label: "LINKEDIN", value: "/in/ajaykumardrb", color: "text-royal", href: "#" },
+  { label: "TWITTER / X", value: "@ajaykumardrb", color: "text-jade", href: "#" },
+  { label: "DISCORD", value: "ak.drb", color: "text-crimson", href: "#" },
+  { label: "EMAIL", value: "hello@akdrb.dev", color: "text-royal", href: "#" },
+];
+
+function Pixel({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+  return <span className={`font-pixel ${className}`}>{children}</span>;
+}
+
+function Index() {
+  return (
+    <div className="relative min-h-screen overflow-x-clip bg-cream font-mono text-ink">
+      <div className="grid-backdrop pointer-events-none absolute inset-0" />
+      <div className="grain pointer-events-none absolute inset-0 z-40 mix-blend-multiply" />
+
+      {/* ============ HEADER ============ */}
+      <header className="sticky top-0 z-50 border-b-[3px] border-ink bg-paper/95 backdrop-blur">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
+          <a href="#home" className="flex items-center gap-2">
+            <span className="bg-crimson px-2 py-1.5 font-pixel text-[10px] text-paper shadow-hard-xs">
+              ◆ AK.DRB
+            </span>
+          </a>
+          <nav className="hidden items-center gap-6 md:flex">
+            {NAV.map((n) => (
+              <a
+                key={n.id}
+                href={`#${n.id}`}
+                className="text-[10px] tracking-[0.15em] text-ink/55 transition-colors hover:text-crimson"
+              >
+                <span className="text-crimson">{n.num}</span> {n.label}
+              </a>
+            ))}
+          </nav>
+          <div className="flex items-center gap-3">
+            <span className="hidden items-center gap-2 border-[3px] border-ink bg-jade px-3 py-2 font-pixel text-[9px] text-paper shadow-hard-xs sm:inline-flex">
+              <span className="blink">●</span> AVAILABLE FOR HIRE
+            </span>
+          </div>
+        </div>
+      </header>
+
+      {/* ============ STAGE 01 · HERO ============ */}
+      <section id="home" className="relative border-b-[3px] border-ink">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr]">
+          <div className="relative flex flex-col justify-center px-6 py-16 sm:px-10 lg:px-12 lg:py-24">
+            <div className="mb-6 inline-flex w-fit items-center gap-3 border-[2px] border-ink bg-paper px-3 py-1.5 font-pixel text-[9px] shadow-hard-xs">
+              <span className="text-royal">★</span>
+              <span className="text-amber-hud">STAGE 01</span>
+              <span className="text-crimson">NOW PLAYING</span>
+            </div>
+            <p className="mb-4 font-pixel text-[10px] tracking-[0.25em] text-crimson sm:text-[11px]">
+              FULL-STACK DEVELOPER // SYSTEMS THINKER // RECOVERING QA
+            </p>
+            <h1 className="font-display text-[17vw] leading-[0.85] text-ink sm:text-8xl lg:text-[7.5rem] xl:text-[8.5rem]">
+              AJAY KUMAR
+              <br />
+              <span className="text-crimson">DRB</span>
+            </h1>
+            <div className="mt-6 max-w-md border-[3px] border-ink bg-paper p-4 shadow-hard-sm">
+              <div className="mb-2 flex items-center justify-between">
+                <Pixel className="text-[9px] text-crimson">■ MISSION: HIGH-PERFORMANCE WEB</Pixel>
+                <Pixel className="hidden text-[8px] text-jade sm:inline">● ONLINE</Pixel>
+              </div>
+              <p className="text-[13px] leading-relaxed text-ink/80">
+                From mechanical engineering to software craftsmanship — architecting scalable
+                full-stack applications with modern web technologies.
+              </p>
+            </div>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <a
+                href="#bosses"
+                className="border-[3px] border-ink bg-crimson px-6 py-3.5 font-pixel text-[10px] text-paper shadow-hard-sm transition-transform hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none"
+              >
+                ⚔ VIEW MISSIONS
+              </a>
+              <a
+                href="#comms"
+                className="border-[3px] border-ink bg-paper px-6 py-3.5 font-pixel text-[10px] text-ink shadow-hard-sm transition-transform hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none"
+              >
+                ✉ CONTACT
+              </a>
+            </div>
+            <div className="mt-10 flex flex-wrap gap-2 font-pixel text-[9px] text-ink/60">
+              <span className="border-[2px] border-ink/30 px-2 py-1">MECH → SW</span>
+              <span className="border-[2px] border-ink/30 px-2 py-1">FULL-STACK</span>
+              <span className="border-[2px] border-ink/30 px-2 py-1">RANK: S</span>
+            </div>
+          </div>
+          <div className="relative border-ink lg:border-l-[3px]">
+            <div className="absolute left-0 top-0 z-10 flex h-9 w-full items-center justify-between bg-ink px-3 font-pixel text-[9px] text-cream">
+              <span>REEL 01</span>
+              <span className="text-crimson">
+                <span className="blink">●</span> REC
+              </span>
+            </div>
+            <img
+              src={portrait}
+              alt="Pixel-art portrait of Ajay Kumar DRB"
+              className="h-full min-h-[420px] w-full border-b-[3px] border-ink object-cover lg:border-b-0"
+              width={912}
+              height={1104}
+            />
+            <div className="absolute bottom-0 left-0 z-10 w-full bg-ink px-3 py-2.5 font-pixel text-[8px] text-cream">
+              DIRECTED BY ME · RENDERED IN PIXELS
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ============ MARQUEE ============ */}
+      <div className="relative z-10 overflow-hidden border-b-[3px] border-ink bg-crimson py-2.5">
+        <div className="marquee-track flex w-max gap-8 whitespace-nowrap font-pixel text-[10px] font-bold text-paper">
+          {[0, 1].map((i) => (
+            <span key={i}>
+              ★ CAREER CHRONICLES ★ BOSS BATTLES ★ TECH SKILL TREE ★ CONTACT HQ ★ CAREER
+              CHRONICLES ★ BOSS BATTLES ★ TECH SKILL TREE ★ CONTACT HQ ★
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* ============ STAGE 02 · PATH ============ */}
+      <section id="path" className="relative border-b-[3px] border-ink bg-paper">
+        <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:py-20">
+          <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <Pixel className="text-[10px] tracking-[0.2em] text-crimson">STAGE 02</Pixel>
+              <h2 className="mt-3 font-display text-4xl uppercase sm:text-5xl">
+                Career Chronicles
+              </h2>
+              <p className="mt-2 max-w-xl text-[14px] text-ink/70">
+                From engineering mechanical components to architecting high-scale software
+                platforms.
+              </p>
+            </div>
+            <span className="border-[2px] border-ink px-3 py-1.5 font-pixel text-[9px] shadow-hard-xs">
+              LV.01 → LV.09
+            </span>
+          </div>
+          <div className="film-strip flex gap-4 overflow-x-auto pb-2 lg:grid lg:grid-cols-3 lg:overflow-visible">
+            {LEVELS.map((l) => (
+              <article
+                key={l.lv}
+                className="min-w-[260px] flex-1 border-[3px] border-ink bg-cream p-4 shadow-hard"
+              >
+                <div className="mb-3 flex justify-between font-pixel">
+                  <span className="text-[9px] text-amber-hud">{l.lv}</span>
+                  <span className="text-[9px] text-jade">{l.pct}%</span>
+                </div>
+                <h3 className="font-display text-lg uppercase leading-tight">{l.title}</h3>
+                <p className="mt-2 text-[12.5px] leading-relaxed text-ink/70">{l.text}</p>
+                <div className="mt-3 h-3 border-[2px] border-ink bg-paper">
+                  <div className={`h-full ${l.bar}`} style={{ width: `${l.pct}%` }} />
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ============ STAGE 03 · BOSSES ============ */}
+      <section id="bosses" className="relative border-b-[3px] border-ink">
+        <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:py-20">
+          <div className="mb-10">
+            <Pixel className="text-[10px] tracking-[0.2em] text-crimson">STAGE 03</Pixel>
+            <h2 className="mt-3 font-display text-4xl uppercase sm:text-5xl">
+              Boss Battles &amp; Projects
+            </h2>
+            <p className="mt-2 max-w-xl text-[14px] text-ink/70">
+              Select a target mission card to view battle intel, stack specs and live deployment.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            {BOSSES.map((b) => (
+              <article
+                key={b.name}
+                className="flex flex-col border-[3px] border-ink bg-paper p-5 shadow-hard"
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <h3 className="font-display text-2xl uppercase leading-tight">{b.name}</h3>
+                  <span className="shrink-0 font-pixel text-[11px] text-amber-hud">
+                    {"★".repeat(b.stars)}
+                  </span>
+                </div>
+                <p className="mt-1 text-[11px] text-ink/60">{b.sub}</p>
+                <p className="mt-3 text-[13px] leading-relaxed text-ink/80">{b.desc}</p>
+                <div className="mt-4 space-y-2">
+                  {b.stats.map((s) => (
+                    <div key={s.k} className="flex items-center gap-2">
+                      <span className="w-10 font-pixel text-[9px]">{s.k}</span>
+                      <div className="h-3.5 flex-1 border-[2px] border-ink bg-cream">
+                        <div className={`h-full ${s.c}`} style={{ width: `${s.v}%` }} />
+                      </div>
+                      <span className="w-7 text-right font-pixel text-[9px]">{s.v}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-4 flex flex-wrap gap-2 font-pixel text-[9px]">
+                  {b.tags.map((t) => (
+                    <span key={t} className="border-[2px] border-ink px-2 py-1">
+                      {t}
+                    </span>
+                  ))}
+                </div>
+                <div className="mt-5 flex flex-1 items-end gap-3">
+                  <a
+                    href="#comms"
+                    className="flex-1 border-[3px] border-ink bg-crimson py-2.5 text-center font-pixel text-[10px] text-paper shadow-hard-xs transition-transform hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none"
+                  >
+                    ⚔ BATTLE
+                  </a>
+                  <a
+                    href="#"
+                    className="flex-1 border-[3px] border-ink bg-paper py-2.5 text-center font-pixel text-[10px] shadow-hard-xs transition-transform hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none"
+                  >
+                    ▣ INTEL
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ============ STAGE 04 · WEAPONS ============ */}
+      <section id="weapons" className="relative border-b-[3px] border-ink bg-paper">
+        <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:py-20">
+          <div className="mb-10">
+            <Pixel className="text-[10px] tracking-[0.2em] text-crimson">STAGE 04</Pixel>
+            <h2 className="mt-3 font-display text-4xl uppercase sm:text-5xl">
+              Tech Skill Tree + Arsenal
+            </h2>
+            <p className="mt-2 max-w-xl text-[14px] text-ink/70">
+              Tech branches across frontend, backend and DevOps &amp; QA — every node unlocked in
+              live battle.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1.4fr_0.6fr]">
+            <div className="border-[3px] border-ink bg-cream p-6 shadow-hard">
+              <div className="mb-6 flex items-center justify-between">
+                <Pixel className="text-[9px] text-ink/60">● UNLOCKED NODES</Pixel>
+                <Pixel className="text-[9px] text-jade">{SKILLS.length} / 12</Pixel>
+              </div>
+              <div className="grid grid-cols-3 gap-x-4 gap-y-6 text-center sm:grid-cols-4 lg:grid-cols-6">
+                {SKILLS.map((s) => (
+                  <div key={s.name} className="flex flex-col items-center gap-2">
+                    <div
+                      className={`grid size-16 place-items-center border-[3px] border-ink font-pixel text-[9px] shadow-hard-xs transition-transform hover:-translate-y-1 sm:size-20 sm:text-[10px] ${s.bg} ${s.text}`}
+                    >
+                      {s.abbr}
+                    </div>
+                    <span className="font-pixel text-[7px] leading-relaxed">{s.name}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <aside className="border-[3px] border-ink bg-cream p-5 shadow-hard">
+              <div className="flex items-center justify-between">
+                <Pixel className="text-[9px] text-crimson">▶ INSPECTOR</Pixel>
+                <span className="border-[2px] border-ink px-2 py-0.5 font-pixel text-[8px]">
+                  BRANCH: DEVOPS
+                </span>
+              </div>
+              <h3 className="mt-4 font-display text-3xl uppercase">GitHub Actions</h3>
+              <div className="mt-4 space-y-2">
+                {[
+                  { k: "MASTERY", v: 85, c: "bg-jade" },
+                  { k: "USE", v: 78, c: "bg-royal" },
+                ].map((r) => (
+                  <div key={r.k} className="flex items-center gap-2">
+                    <span className="w-14 font-pixel text-[8px]">{r.k}</span>
+                    <div className="h-3 flex-1 border-[2px] border-ink bg-paper">
+                      <div className={`h-full ${r.c}`} style={{ width: `${r.v}%` }} />
+                    </div>
+                    <span className="font-pixel text-[8px]">{r.v}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-4 border-[2px] border-ink bg-paper p-3 text-[12.5px] leading-relaxed text-ink/75">
+                Automated CI/CD workflows, matrix testing and deployment pipelines. Pairs with the
+                Docker node.
+              </div>
+              <div className="mt-4 flex items-center justify-between border-[2px] border-ink bg-paper px-3 py-2">
+                <Pixel className="text-[8px] text-ink/60">PREREQ</Pixel>
+                <span className="border-[2px] border-ink px-2 py-0.5 font-pixel text-[8px]">
+                  DOCKER
+                </span>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      {/* ============ STAGE 05 · COMMS ============ */}
+      <section id="comms" className="relative border-b-[3px] border-ink">
+        <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:py-20">
+          <div className="mb-10">
+            <Pixel className="text-[10px] tracking-[0.2em] text-crimson">STAGE 05</Pixel>
+            <h2 className="mt-3 font-display text-4xl uppercase sm:text-5xl">Let&rsquo;s Build</h2>
+            <p className="mt-2 max-w-xl text-[14px] text-ink/70">
+              Hire me for your next ambitious project — open a channel below.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-[0.8fr_1.2fr]">
+            <div className="space-y-3">
+              {CHANNELS.map((c) => (
+                <a
+                  key={c.label}
+                  href={c.href}
+                  className="flex items-center justify-between border-[3px] border-ink bg-paper px-4 py-3 shadow-hard-xs transition-transform hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none"
+                >
+                  <Pixel className="text-[9px]">{c.label}</Pixel>
+                  <span className={`text-[12px] ${c.color}`}>{c.value}</span>
+                </a>
+              ))}
+            </div>
+            <form
+              className="border-[3px] border-ink bg-paper p-6 shadow-hard"
+              onSubmit={(e) => e.preventDefault()}
+            >
+              <div className="mb-5 flex items-center gap-3">
+                <span className="h-[3px] w-8 bg-crimson" />
+                <Pixel className="text-[10px] text-crimson">TRANSMIT MESSAGE</Pixel>
+                <span className="h-[3px] flex-1 bg-crimson/30" />
+              </div>
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                <label className="block">
+                  <Pixel className="text-[9px] tracking-[0.15em]">CALLSIGN</Pixel>
+                  <input
+                    className="mt-2 w-full border-[2px] border-ink bg-cream px-3 py-2.5 text-[13px] outline-none focus:ring-2 focus:ring-crimson"
+                    placeholder="Player One"
+                  />
+                </label>
+                <label className="block">
+                  <Pixel className="text-[9px] tracking-[0.15em]">FREQUENCY</Pixel>
+                  <input
+                    className="mt-2 w-full border-[2px] border-ink bg-cream px-3 py-2.5 text-[13px] outline-none focus:ring-2 focus:ring-crimson"
+                    placeholder="you@studio.com"
+                  />
+                </label>
+              </div>
+              <label className="mt-4 block">
+                <Pixel className="text-[9px] tracking-[0.15em]">TRANSMISSION</Pixel>
+                <textarea
+                  rows={5}
+                  className="mt-2 w-full border-[2px] border-ink bg-cream px-3 py-2.5 text-[13px] outline-none focus:ring-2 focus:ring-crimson"
+                  placeholder="Enter transmission data..."
+                />
+              </label>
+              <button
+                type="submit"
+                className="mt-5 w-full border-[3px] border-ink bg-crimson py-3.5 font-pixel text-[10px] text-paper shadow-hard-sm transition-transform hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none"
+              >
+                ▶ TRANSMIT
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      {/* ============ CREDITS FOOTER ============ */}
+      <footer className="relative bg-ink px-4 py-10 text-cream sm:px-6">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-6 text-center font-pixel text-[10px] tracking-[0.4em] text-crimson">
+            — THE END · ROLL CREDITS —
+          </div>
+          <div className="grid grid-cols-2 gap-x-8 gap-y-3 text-[12px] text-cream/80 md:grid-cols-4">
+            <div>
+              <div className="font-pixel text-[8px] tracking-[0.2em] text-amber-hud">
+                DIRECTED BY
+              </div>
+              Ajay Kumar DRB
+            </div>
+            <div>
+              <div className="font-pixel text-[8px] tracking-[0.2em] text-amber-hud">GENRE</div>
+              Full-Stack / Systems
+            </div>
+            <div>
+              <div className="font-pixel text-[8px] tracking-[0.2em] text-amber-hud">ENGINE</div>
+              Modern Web Stack
+            </div>
+            <div>
+              <div className="font-pixel text-[8px] tracking-[0.2em] text-amber-hud">THEME</div>
+              32-Bit Light
+            </div>
+          </div>
+          <div className="mt-8 flex flex-wrap items-center justify-between gap-4 border-t-[2px] border-cream/20 pt-6 font-pixel text-[8px] tracking-[0.15em] text-cream/60">
+            <span>© 2026 AK.DRB · ALL RIGHTS RESERVED</span>
+            <span className="flex items-center gap-3">
+              <span className="text-crimson">
+                <span className="blink">●</span> HUNTER PROTOCOL ACTIVE
+              </span>
+              <span className="text-jade">WEAPON: Z-SABER</span>
+              <span>PORTFOLIO v2.1</span>
+            </span>
+          </div>
+        </div>
+      </footer>
+
+      {/* ============ FIXED STATUS BAR ============ */}
+      <div className="fixed inset-x-0 bottom-0 z-50 flex items-center justify-between border-t-[3px] border-ink bg-paper px-4 py-2 font-pixel text-[8px] tracking-[0.12em] sm:px-6 sm:text-[9px]">
+        <div className="flex gap-3 sm:gap-5">
+          <span className="text-jade">⚔ Z-SABER</span>
+          <span className="hidden text-ink/60 sm:inline">OUTPUT: 8.4 GHZ</span>
+          <span className="text-crimson">HUNTER PROTOCOL ACTIVE</span>
+        </div>
+        <span className="text-ink/60">V2.1 // 32-BIT LIGHT</span>
+      </div>
+      <div className="h-10" />
+    </div>
+  );
+}
+
+
+//__root.tsx
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import {
+  Outlet,
+  Link,
+  createRootRouteWithContext,
+  useRouter,
+  HeadContent,
+  Scripts,
+} from "@tanstack/react-router";
+import { useEffect, type ReactNode } from "react";
+
+import appCss from "../styles.css?url";
+import { reportLovableError } from "../lib/lovable-error-reporting";
+
+function NotFoundComponent() {
+  return (
+    <div className="flex min-h-screen items-center justify-center bg-background px-4">
+      <div className="max-w-md text-center">
+        <h1 className="text-7xl font-bold text-foreground">404</h1>
+        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
+        <p className="mt-2 text-sm text-muted-foreground">
+          The page you're looking for doesn't exist or has been moved.
+        </p>
+        <div className="mt-6">
+          <Link
+            to="/"
+            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+          >
+            Go home
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
+  console.error(error);
+  const router = useRouter();
+  useEffect(() => {
+    reportLovableError(error, { boundary: "tanstack_root_error_component" });
+  }, [error]);
+
+  return (
+    <div className="flex min-h-screen items-center justify-center bg-background px-4">
+      <div className="max-w-md text-center">
+        <h1 className="text-xl font-semibold tracking-tight text-foreground">
+          This page didn't load
+        </h1>
+        <p className="mt-2 text-sm text-muted-foreground">
+          Something went wrong on our end. You can try refreshing or head back home.
+        </p>
+        <div className="mt-6 flex flex-wrap justify-center gap-2">
+          <button
+            onClick={() => {
+              router.invalidate();
+              reset();
+            }}
+            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+          >
+            Try again
+          </button>
+          <a
+            href="/"
+            className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+          >
+            Go home
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
+  head: () => ({
+    meta: [
+      { charSet: "utf-8" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { title: "Ajay Kumar DRB — Full-Stack Developer" },
+      {
+        name: "description",
+        content:
+          "Retro 32-bit portfolio of Ajay Kumar DRB — full-stack developer, systems thinker, recovering QA.",
+      },
+      { name: "author", content: "Ajay Kumar DRB" },
+      { property: "og:title", content: "Ajay Kumar DRB — Full-Stack Developer" },
+      {
+        property: "og:description",
+        content:
+          "Full-stack developer // Systems thinker // Recovering QA. Career chronicles, boss battles & tech arsenal in 32-bit.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [
+      {
+        rel: "stylesheet",
+        href: appCss,
+      },
+      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      {
+        rel: "preconnect",
+        href: "https://fonts.gstatic.com",
+        crossOrigin: "anonymous",
+      },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Press+Start+2P&family=IBM+Plex+Mono:wght@400;500;600&family=Anton&display=swap",
+      },
+    ],
+  }),
+  shellComponent: RootShell,
+  component: RootComponent,
+  notFoundComponent: NotFoundComponent,
+  errorComponent: ErrorComponent,
+});
+
+function RootShell({ children }: { children: ReactNode }) {
+  return (
+    <html lang="en">
+      <head>
+        <HeadContent />
+      </head>
+      <body>
+        {children}
+        <Scripts />
+      </body>
+    </html>
+  );
+}
+
+function RootComponent() {
+  const { queryClient } = Route.useRouteContext();
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+      <Outlet />
+    </QueryClientProvider>
+  );
+}

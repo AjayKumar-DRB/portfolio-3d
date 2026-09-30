@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none">
+  <defs>
+    <!-- MMX4 Crescent Slash Energy Wave Gradients -->
+    <linearGradient id="slashWaveGrad" x1="10" y1="10" x2="80" y2="80" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="1"/>
+      <stop offset="30%" stop-color="#70FFAF" stop-opacity="0.95"/>
+      <stop offset="65%" stop-color="#00E575" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#00A850" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Hot core energy line -->
+    <linearGradient id="slashCoreGrad" x1="12" y1="12" x2="75" y2="75" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="1"/>
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#4EFEB3" stop-opacity="0"/>
+    </linearGradient>
+
+    <filter id="slashGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#00FFAA" flood-opacity="0.95"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="1.5" flood-color="#FFFFFF" flood-opacity="0.8"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#slashGlow)">
+    <!-- Main Sweeping MMX4 Crescent Arc Wave -->
+    <path
+      d="M12 18 C28 4 68 12 84 38 C72 26 44 20 24 30 C16 35 12 44 8 52 C7 40 8 28 12 18 Z"
+      fill="url(#slashWaveGrad)"
+    />
+    <!-- Outer energy cutting blade ridge -->
+    <path
+      d="M14 16 C30 2 72 10 86 36"
+      stroke="#FFFFFF"
+      stroke-width="2.5"
+      stroke-linecap="round"
+    />
+    <!-- Secondary internal shockwave ribbon -->
+    <path
+      d="M18 24 C34 14 62 18 76 38"
+      stroke="url(#slashCoreGrad)"
+      stroke-width="1.8"
+      stroke-linecap="round"
+      opacity="0.85"
+    />
+  </g>
+</svg>

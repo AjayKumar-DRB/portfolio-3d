@@ -1,0 +1,705 @@
+{
+  "identity": {
+    "name": "Ajay Kumar D R B",
+    "nameShort": "AK.DRB",
+    "title": "Frontend-focused Full Stack Developer",
+    "tagline": "Frontend-focused Full Stack Engineer who enjoys turning ambiguous problems into practical software products.",
+    "location": "Bangalore, Karnataka, India",
+    "email": "ajaykumardrb@gmail.com",
+    "linkedin": "https://linkedin.com/in/ajaykumardrb",
+    "github": "https://github.com/AjayKumar-DRB",
+    "portfolioDomain": "ajaykumardrb.netlify.app"
+  },
+  "hero": {
+    "stageBadge": "STAGE 01",
+    "stageStatus": "NOW PLAYING",
+    "subtitleLine": "FULL-STACK DEV // PRODUCT THINKER // EX-QA",
+    "missionLabel": "MISSION: HIGH-PERFORMANCE WEB",
+    "missionDescription": "From Mechanical Engineering to software craftsmanship — building scalable full-stack products across React, Node.js, APIs, databases, and integrations.",
+    "statusTags": [
+      "MECH → SW",
+      "FULL-STACK",
+      "RANK: S"
+    ],
+    "ctaPrimary": {
+      "label": "VIEW MISSIONS",
+      "href": "projects",
+      "icon": "⚔"
+    },
+    "ctaSecondary": {
+      "label": "CONTACT",
+      "href": "contact",
+      "icon": "✉"
+    }
+  },
+  "philosophy": "He does not want to just write code for the sake of writing code. He wants to understand the problem, why it exists, what the user or business actually needs, and how software can make that process easier, faster, more reliable, or automated.",
+  "careerChapters": [
+    {
+      "id": "mech-engineering",
+      "level": 1,
+      "title": "Before Software",
+      "subtitle": "Mechanical Engineering to First Spark",
+      "period": "2018 — 2022",
+      "company": "K.L.N. College of Engineering",
+      "role": "B.E. Mechanical Engineering Student",
+      "description": "Chose Mechanical Engineering without a clear path into software. First exposure to Python in the first year of engineering opened a door. Curiosity about how programs work and why different technologies exist gradually pulled him toward web development. Graduated with First Class with Distinction (GPA 8.66).",
+      "highlights": [
+        "First exposure to Python and programming fundamentals",
+        "Developed curiosity about how software systems work",
+        "Learned to think analytically about complex systems",
+        "Graduated First Class with Distinction — GPA 8.66"
+      ],
+      "retroTitle": "ORIGIN STAGE",
+      "accentColor": "#D97706"
+    },
+    {
+      "id": "chegg-freelance",
+      "level": 2,
+      "title": "The Side Mission",
+      "subtitle": "Freelance Mathematics Expert at Chegg India",
+      "period": "Feb 2020 — Mar 2024",
+      "company": "Chegg India",
+      "role": "Mathematics Subject Matter Expert (Freelance)",
+      "description": "Ran alongside college and early professional work as a freelance gig. Solved 200+ mathematics questions for students across Algebra, Calculus, Discrete Maths, Statistics, PDEs, and more. Developed the habit of breaking complex problems into clear, understandable steps — a skill that carried directly into software engineering.",
+      "highlights": [
+        "Solved 200+ mathematics questions across multiple disciplines",
+        "Algebra, Calculus, Discrete Maths, Statistics, PDEs, Probability",
+        "Supported students from CSE, Mechanical, and other programs",
+        "Built strong problem-decomposition and clear explanation skills"
+      ],
+      "retroTitle": "SIDE QUEST",
+      "accentColor": "#F59E0B"
+    },
+    {
+      "id": "qa-engineer",
+      "level": 3,
+      "title": "Learning How Software Fails",
+      "subtitle": "QA Engineering at Chella Software",
+      "period": "Jul 2022 — Sep 2023",
+      "company": "Chella Software",
+      "role": "Junior Software QA Engineer",
+      "description": "First professional software role. Tested enterprise financial software — functional testing, regression testing, reproducing production issues, and collaborating with developers to validate fixes. After around a year, the desire to build rather than only find bugs became the driving reason to move into development.",
+      "highlights": [
+        "Functional and regression testing on enterprise financial software",
+        "Reproducing production issues and validating fixes",
+        "Collaborating with development teams on software quality",
+        "Developed a mindset for edge cases, reliability, and reproducibility"
+      ],
+      "retroTitle": "QA TRAINING GROUNDS",
+      "accentColor": "#00D26A"
+    },
+    {
+      "id": "fullstack-bootcamp",
+      "level": 4,
+      "title": "Building the Foundation",
+      "subtitle": "MERN Bootcamp at HCL GUVI Zen",
+      "period": "Dec 2023 — Feb 2024",
+      "company": "HCL GUVI Zen",
+      "role": "Full-Stack Development Student",
+      "description": "After leaving QA, enrolled in a dedicated MERN Stack Bootcamp through HCL GUVI Zen. Expanded skills across React, Next.js, Node.js, Express.js, MongoDB, MySQL, and Tailwind CSS. The bootcamp's placement program connected him directly to Konnectify.",
+      "highlights": [
+        "MERN Stack Bootcamp — GUVI Zen (2023–2024)",
+        "React, Next.js, Node.js, Express.js, MongoDB, MySQL",
+        "Tailwind CSS, Bootstrap, full-stack project workflow",
+        "Bootcamp placement led directly to Konnectify role"
+      ],
+      "retroTitle": "SKILL TREE UNLOCK",
+      "accentColor": "#0EA5E9"
+    },
+    {
+      "id": "independent",
+      "level": 5,
+      "title": "Learning by Building",
+      "subtitle": "Personal Projects and Real Confidence",
+      "period": "Mar 2024 — Jun 2025",
+      "company": "Independent",
+      "role": "Full-Stack Developer (Personal Projects)",
+      "description": "Used this period to build personal full-stack applications, learn backend engineering, work with databases and authentication, and deploy real projects. The key realization: given a problem statement, Ajay could reason about it, design a software approach, build it, and ship it.",
+      "highlights": [
+        "Built and deployed full-stack projects (ZapCart, SystemMapper)",
+        "Strengthened React, Node.js, MongoDB, PostgreSQL skills",
+        "Deployed real applications on Netlify and Vercel",
+        "Moved from knowing tech to building working products independently"
+      ],
+      "retroTitle": "SOLO CAMPAIGN",
+      "accentColor": "#7C3AED"
+    },
+    {
+      "id": "konnectify",
+      "level": 6,
+      "title": "Production Engineering",
+      "subtitle": "Startup Full-Stack at Konnectify",
+      "period": "Jun 2025 — May 2026",
+      "company": "Konnectify",
+      "role": "Frontend Developer (Full Stack)",
+      "description": "Joined a workflow-automation SaaS startup (similar to Zapier) as a frontend developer. In a 5-person engineering team, worked across frontend, backend, database, integrations, and testing. Contributed to two major product revamps. Built workflow builder features, event logging, Stripe billing, user/access modules, and authentication systems.",
+      "highlights": [
+        "Workflow builder: Paths, Repeaters, Code Blocks, Delays",
+        "Stripe billing with multi-currency support (USD, EUR, INR)",
+        "RSA/OAuth authentication and user access management",
+        "Freshsales and Freshdesk proof-of-concept integrations",
+        "React, NestJS, PostgreSQL across frontend and backend"
+      ],
+      "retroTitle": "PRODUCTION BATTLES",
+      "accentColor": "#E11D48"
+    }
+  ],
+  "projects": [
+    {
+      "id": "system-mapper",
+      "title": "SystemMapper",
+      "tagline": "Repository analysis & code visualization platform",
+      "description": "Ajay's most ambitious personal project. Accepts public GitHub repositories, parses code, identifies structure and dependencies, and visualizes them as interactive nodes and edges. Supports JavaScript, TypeScript, Python, Java, Go, and C#. Deployed and working — AI-assisted analysis features are in progress.",
+      "stack": [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "Node.js",
+        "PostgreSQL",
+        "MemGraph",
+        "GitHub API",
+        "Claude API",
+        "Snyk API"
+      ],
+      "github": "https://github.com/AjayKumar-DRB/SystemMapper-MonoRepo",
+      "live": "https://systemmapper.netlify.app/explore",
+      "status": "In Progress",
+      "isWIP": true,
+      "stats": {
+        "atk": 88,
+        "def": 80,
+        "spd": 72,
+        "mag": 92
+      },
+      "difficulty": 5,
+      "gradient": "from-sky-500 via-indigo-500 to-violet-500",
+      "accentColor": "#0284C7",
+      "highlights": [
+        "Analyzes public GitHub repositories",
+        "Parses JavaScript, TypeScript, Python, Java, Go, C#",
+        "Interactive node-edge visualization of codebase structure",
+        "AI-assisted code analysis features in progress"
+      ]
+    },
+    {
+      "id": "zapcart",
+      "title": "ZapCart",
+      "tagline": "MERN e-commerce platform with admin dashboard",
+      "description": "A full-stack e-commerce platform built on the MERN stack. Features a role-based admin dashboard, dynamic product filtering, centralized cart state via Redux Toolkit, and PayPal payment integration.",
+      "stack": [
+        "React.js",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Redux Toolkit",
+        "ShadCN",
+        "PayPal API"
+      ],
+      "github": "https://github.com/AjayKumar-DRB/ZapKart-Frontend",
+      "live": "https://zapcart.netlify.app/",
+      "status": "Shipped",
+      "isWIP": false,
+      "stats": {
+        "atk": 78,
+        "def": 80,
+        "spd": 76,
+        "mag": 68
+      },
+      "difficulty": 3,
+      "gradient": "from-emerald-500 via-teal-500 to-cyan-500",
+      "accentColor": "#00D26A",
+      "highlights": [
+        "Role-based admin dashboard",
+        "Dynamic product filtering",
+        "Redux Toolkit for centralized cart state",
+        "PayPal API payment integration"
+      ]
+    },
+    {
+      "id": "python-interview-cookbook",
+      "title": "Python Interview Cookbook",
+      "tagline": "Open-source Python & algorithms reference guide",
+      "description": "An open-source reference guide for interview preparation. Covers Python language concepts, standard library, algorithmic patterns, and interview-preparation material. Demonstrates Ajay's interest in Python, algorithms, and learning through documentation.",
+      "stack": [
+        "Python",
+        "Algorithms",
+        "GitHub Pages"
+      ],
+      "github": "https://github.com/AjayKumar-DRB/Python_Cookbook",
+      "live": "https://ajaykumar-drb.github.io/Python_Cookbook/",
+      "status": "Shipped",
+      "isWIP": false,
+      "stats": {
+        "atk": 65,
+        "def": 82,
+        "spd": 70,
+        "mag": 74
+      },
+      "difficulty": 2,
+      "gradient": "from-amber-500 via-yellow-500 to-orange-400",
+      "accentColor": "#D97706",
+      "highlights": [
+        "Python language concepts and standard library",
+        "Algorithmic patterns for interview prep",
+        "Open-source and hosted on GitHub Pages",
+        "Learning through documentation and teaching"
+      ]
+    },
+    {
+      "id": "gold-rate-calculator",
+      "title": "Golden Gauge",
+      "tagline": "Real-time gold price calculator with live market rates",
+      "description": "An early full-stack project that connects user input (gold quantity, karat, currency) to a backend API flow to fetch live market rates and calculate results. Important as Ajay's first project connecting frontend, backend, APIs, and a real-world use case.",
+      "stack": [
+        "React",
+        "Node.js",
+        "Express.js",
+        "REST API"
+      ],
+      "github": "https://github.com/AjayKumar-DRB/GoldRateCalculator_FrontEnd",
+      "live": "https://goldengauge.netlify.app/",
+      "status": "Shipped",
+      "isWIP": false,
+      "stats": {
+        "atk": 60,
+        "def": 68,
+        "spd": 72,
+        "mag": 62
+      },
+      "difficulty": 2,
+      "gradient": "from-rose-500 via-pink-500 to-fuchsia-500",
+      "accentColor": "#E11D48",
+      "highlights": [
+        "Live gold rate API integration",
+        "Frontend to Backend to API data flow",
+        "First full-stack project connecting real-world data",
+        "User inputs: quantity, karat, and currency"
+      ]
+    }
+  ],
+  "skills": {
+    "categories": [
+      {
+        "id": "frontend",
+        "title": "Frontend Dev",
+        "retroLabel": "FRONTEND",
+        "color": "#2563EB",
+        "skills": [
+          {
+            "id": "react",
+            "name": "React.js",
+            "abbr": "R",
+            "iconKey": "SiReact",
+            "level": 92,
+            "use": 95,
+            "color": "#2563EB",
+            "description": "Primary UI library for component-driven interfaces. Deep experience with hooks, state, context, and virtual DOM across production SaaS.",
+            "pairs": "Next.js"
+          },
+          {
+            "id": "nextjs",
+            "name": "Next.js",
+            "abbr": "N",
+            "iconKey": "SiNextdotjs",
+            "level": 88,
+            "use": 85,
+            "color": "#2563EB",
+            "description": "Full-stack React framework. Production routing, SSR/SSG, server actions, API routes, and optimized client bundles.",
+            "pairs": "TypeScript",
+            "parentSkill": "React.js"
+          },
+          {
+            "id": "typescript",
+            "name": "TypeScript",
+            "abbr": "TS",
+            "iconKey": "SiTypescript",
+            "level": 88,
+            "use": 90,
+            "color": "#2563EB",
+            "description": "Strongly-typed JavaScript for scalable frontend and backend architectures. Strict types, generics, and API contract safety.",
+            "pairs": "React.js"
+          },
+          {
+            "id": "redux",
+            "name": "Redux Toolkit",
+            "abbr": "RT",
+            "iconKey": "SiRedux",
+            "level": 82,
+            "use": 80,
+            "color": "#2563EB",
+            "description": "Predictable state container for complex application flows. Centralized cart, filtering, and checkout state in ZapCart.",
+            "pairs": "React.js",
+            "parentSkill": "React.js"
+          },
+          {
+            "id": "tailwind",
+            "name": "Tailwind CSS",
+            "abbr": "TW",
+            "iconKey": "SiTailwindcss",
+            "level": 86,
+            "use": 90,
+            "color": "#2563EB",
+            "description": "Utility-first CSS framework for rapid UI development. Responsive layouts, dark mode tokens, and custom animation styling.",
+            "pairs": "React.js",
+            "parentSkill": "React.js"
+          }
+        ]
+      },
+      {
+        "id": "backend",
+        "title": "Backend Dev",
+        "retroLabel": "BACKEND",
+        "color": "#16A34A",
+        "skills": [
+          {
+            "id": "nodejs",
+            "name": "Node.js",
+            "abbr": "ND",
+            "iconKey": "SiNodedotjs",
+            "level": 85,
+            "use": 90,
+            "color": "#16A34A",
+            "description": "Asynchronous event-driven JavaScript runtime powering high-throughput backend services, worker queues, and REST APIs.",
+            "pairs": "Express.js"
+          },
+          {
+            "id": "express",
+            "name": "Express.js",
+            "abbr": "EX",
+            "iconKey": "SiExpress",
+            "level": 82,
+            "use": 85,
+            "color": "#16A34A",
+            "description": "Minimalist server framework for RESTful routing, custom middleware pipelines, authentication gates, and error handlers.",
+            "pairs": "Node.js",
+            "parentSkill": "Node.js"
+          },
+          {
+            "id": "nestjs",
+            "name": "NestJS",
+            "abbr": "NE",
+            "iconKey": "SiNestjs",
+            "level": 75,
+            "use": 70,
+            "color": "#16A34A",
+            "description": "Enterprise Node.js framework with TypeScript, decorators, dependency injection, and modular architecture used at Konnectify.",
+            "pairs": "PostgreSQL",
+            "parentSkill": "Node.js"
+          },
+          {
+            "id": "python",
+            "name": "Python",
+            "abbr": "PY",
+            "iconKey": "SiPython",
+            "level": 76,
+            "use": 65,
+            "color": "#16A34A",
+            "description": "First programming language learned. Used for algorithms, interview cookbook guide, data structures, and automation scripts.",
+            "pairs": "REST APIs"
+          },
+          {
+            "id": "restapis",
+            "name": "REST APIs",
+            "abbr": "AP",
+            "iconKey": "SiPostman",
+            "level": 88,
+            "use": 95,
+            "color": "#16A34A",
+            "description": "API contract design, HTTP methods, status codes, webhook triggers, and third-party connector communications.",
+            "pairs": "Postman"
+          }
+        ]
+      },
+      {
+        "id": "database",
+        "title": "Databases",
+        "retroLabel": "DATABASE",
+        "color": "#7C3AED",
+        "skills": [
+          {
+            "id": "postgresql",
+            "name": "PostgreSQL",
+            "abbr": "PG",
+            "iconKey": "SiPostgresql",
+            "level": 80,
+            "use": 80,
+            "color": "#7C3AED",
+            "description": "Relational database used in production at Konnectify. Complex queries, joins, foreign keys, migrations, and performance indexing.",
+            "pairs": "NestJS"
+          },
+          {
+            "id": "mongodb",
+            "name": "MongoDB",
+            "abbr": "MG",
+            "iconKey": "SiMongodb",
+            "level": 84,
+            "use": 82,
+            "color": "#7C3AED",
+            "description": "NoSQL document database for flexible schema applications. Modeled e-commerce catalogs in ZapCart with Mongoose ODM.",
+            "pairs": "Node.js"
+          },
+          {
+            "id": "redis",
+            "name": "Redis",
+            "abbr": "RD",
+            "iconKey": "SiRedis",
+            "level": 68,
+            "use": 55,
+            "color": "#7C3AED",
+            "description": "In-memory data structure store used for API caching, session tokens, rate-limiting, and high-speed data retrieval.",
+            "pairs": "Node.js",
+            "parentSkill": "PostgreSQL"
+          },
+          {
+            "id": "mysql",
+            "name": "MySQL",
+            "abbr": "MY",
+            "iconKey": "SiMysql",
+            "level": 74,
+            "use": 65,
+            "color": "#7C3AED",
+            "description": "Relational database certified via HackerRank SQL certification and hands-on MERN bootcamp training.",
+            "pairs": "PostgreSQL"
+          }
+        ]
+      },
+      {
+        "id": "devops",
+        "title": "DevOps & Tooling",
+        "retroLabel": "DEVOPS",
+        "color": "#E11D48",
+        "skills": [
+          {
+            "id": "docker",
+            "name": "Docker",
+            "abbr": "DK",
+            "iconKey": "SiDocker",
+            "level": 68,
+            "use": 55,
+            "color": "#E11D48",
+            "description": "Containerization tool for reproducible environments, multi-stage Dockerfiles, and local service orchestration.",
+            "pairs": "GitHub Actions"
+          },
+          {
+            "id": "githubactions",
+            "name": "GitHub Actions",
+            "abbr": "GH",
+            "iconKey": "SiGithubactions",
+            "level": 72,
+            "use": 70,
+            "color": "#E11D48",
+            "description": "Automated CI/CD pipelines, automated testing, matrix build checks, and continuous deployment workflows.",
+            "pairs": "Docker"
+          },
+          {
+            "id": "git",
+            "name": "Git & GitHub",
+            "abbr": "GT",
+            "iconKey": "SiGit",
+            "level": 90,
+            "use": 95,
+            "color": "#E11D48",
+            "description": "Distributed version control, branch management, collaborative pull requests, interactive rebases, and merge workflows.",
+            "pairs": "GitHub Actions"
+          },
+          {
+            "id": "vercel",
+            "name": "Vercel / Netlify",
+            "abbr": "VC",
+            "iconKey": "SiVercel",
+            "level": 85,
+            "use": 85,
+            "color": "#E11D48",
+            "description": "Modern edge deployment platforms for Next.js and React frontends with automated preview environments and DNS setup.",
+            "pairs": "Next.js"
+          }
+        ]
+      },
+      {
+        "id": "testing",
+        "title": "Testing & QA",
+        "retroLabel": "TESTING",
+        "color": "#0D9488",
+        "skills": [
+          {
+            "id": "qarigor",
+            "name": "QA Rigor",
+            "abbr": "QA",
+            "iconKey": "SiTestinglibrary",
+            "level": 88,
+            "use": 90,
+            "color": "#0D9488",
+            "description": "Mindset forged from 1+ year QA engineering at Chella Software. Functional testing, regression testing, and bug reproducibility.",
+            "pairs": "Jest"
+          },
+          {
+            "id": "jest",
+            "name": "Jest",
+            "abbr": "JT",
+            "iconKey": "SiJest",
+            "level": 78,
+            "use": 75,
+            "color": "#0D9488",
+            "description": "JavaScript testing framework for unit tests, snapshot assertions, mock functions, and regression prevention.",
+            "pairs": "TypeScript"
+          },
+          {
+            "id": "postman",
+            "name": "Postman",
+            "abbr": "PM",
+            "iconKey": "SiPostman",
+            "level": 86,
+            "use": 90,
+            "color": "#0D9488",
+            "description": "API contract testing, environment variables, automated collection runners, and webhook debugging.",
+            "pairs": "REST APIs"
+          }
+        ]
+      },
+      {
+        "id": "integrations",
+        "title": "Integrations & APIs",
+        "retroLabel": "INTEGRATIONS",
+        "color": "#D97706",
+        "skills": [
+          {
+            "id": "stripe",
+            "name": "Stripe",
+            "abbr": "ST",
+            "iconKey": "SiStripe",
+            "level": 82,
+            "use": 80,
+            "color": "#D97706",
+            "description": "Stripe-integrated billing platform at Konnectify: subscription plans, upgrade/downgrade flows, and multi-currency checkout.",
+            "pairs": "Next.js"
+          },
+          {
+            "id": "paypal",
+            "name": "PayPal API",
+            "abbr": "PP",
+            "iconKey": "SiPaypal",
+            "level": 72,
+            "use": 65,
+            "color": "#D97706",
+            "description": "Payment processing integration for ZapCart handling order captures, payment approvals, and secure checkout flows.",
+            "pairs": "Express.js"
+          },
+          {
+            "id": "claudeapi",
+            "name": "Claude API",
+            "abbr": "AI",
+            "iconKey": "SiOpenai",
+            "level": 78,
+            "use": 75,
+            "color": "#D97706",
+            "description": "LLM integration for developer tooling in SystemMapper, automated code analysis, and AI-accelerated workflows.",
+            "pairs": "TypeScript"
+          }
+        ]
+      }
+    ]
+  },
+  "social": {
+    "links": [
+      {
+        "id": "github",
+        "label": "GitHub",
+        "url": "https://github.com/AjayKumar-DRB",
+        "icon": "GithubLogo"
+      },
+      {
+        "id": "linkedin",
+        "label": "LinkedIn",
+        "url": "https://linkedin.com/in/ajaykumardrb",
+        "icon": "LinkedinLogo"
+      },
+      {
+        "id": "twitter",
+        "label": "Twitter",
+        "url": "https://twitter.com/ajaykumardrb",
+        "icon": "TwitterLogo"
+      },
+      {
+        "id": "discord",
+        "label": "Discord",
+        "url": "https://discord.com/users/ajaykumardrb",
+        "icon": "DiscordLogo"
+      },
+      {
+        "id": "email",
+        "label": "Email",
+        "url": "mailto:ajaykumardrb@gmail.com",
+        "icon": "Envelope"
+      }
+    ],
+    "contact": {
+      "email": "ajaykumardrb@gmail.com",
+      "headline": "Let's build something worth shipping.",
+      "subtext": "Open to full-time roles and collaborative projects across frontend, full-stack, and product engineering."
+    }
+  },
+  "education": {
+    "degree": "Bachelor of Engineering — Mechanical Engineering",
+    "institution": "K.L.N. College of Engineering",
+    "location": "Sivagangai, Tamil Nadu, India",
+    "period": "2018 – 2022",
+    "gpa": "8.66",
+    "distinction": "First Class with Distinction"
+  },
+  "certifications": [
+    {
+      "title": "MERN Stack Web Development Bootcamp",
+      "issuer": "GUVI Zen (HCL)",
+      "year": "2023"
+    },
+    {
+      "title": "SQL Certification",
+      "issuer": "HackerRank",
+      "year": "2023"
+    }
+  ],
+  "strengths": [
+    {
+      "id": "fullstack-breadth",
+      "label": "Full-Stack Breadth",
+      "description": "Can move across frontend, backend, database, integrations, and testing instead of treating frontend as an isolated discipline."
+    },
+    {
+      "id": "frontend-strength",
+      "label": "Frontend Strength",
+      "description": "React and Next.js are his strongest and most enjoyable development areas — from UI architecture to state management and performance."
+    },
+    {
+      "id": "problem-solving",
+      "label": "Problem Solving",
+      "description": "Enjoys taking an unfamiliar requirement, understanding the problem, exploring possible approaches, and implementing a working solution."
+    },
+    {
+      "id": "product-thinking",
+      "label": "Product Thinking",
+      "description": "Prefers to question what problem is being solved and whether there's a simpler or more useful approach before implementing."
+    },
+    {
+      "id": "qa-mindset",
+      "label": "QA Mindset",
+      "description": "QA background helps think about edge cases, reproducibility, regressions, and whether a feature actually works as expected."
+    },
+    {
+      "id": "independent-ownership",
+      "label": "Independent Ownership",
+      "description": "Personal projects demonstrate ability to take an idea from concept to deployment without depending on a large engineering organization."
+    }
+  ],
+  "softSkillStrip": [
+    "PRODUCT THINKER",
+    "QA MINDSET",
+    "FULL-STACK",
+    "PROBLEM SOLVER",
+    "FAST LEARNER",
+    "STARTUP-READY",
+    "INDEPENDENT BUILDER",
+    "MECH TO SW",
+    "SYSTEM THINKER",
+    "API INTEGRATOR"
+  ]
+}

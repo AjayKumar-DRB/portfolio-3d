@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 52 52" fill="none">
+  <defs>
+    <!-- MMX4 Z-Saber Laser Energy Gradients -->
+    <linearGradient id="zsaberBeam" x1="4" y1="4" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="20%" stop-color="#70FFAF"/>
+      <stop offset="55%" stop-color="#00E575"/>
+      <stop offset="100%" stop-color="#00A850"/>
+    </linearGradient>
+
+    <!-- White-hot inner core -->
+    <linearGradient id="zsaberCore" x1="4" y1="4" x2="25" y2="25" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="1"/>
+      <stop offset="60%" stop-color="#E0FFE8" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#70FFAF" stop-opacity="0.3"/>
+    </linearGradient>
+
+    <!-- Outer emerald energy aura filter -->
+    <filter id="zsaberGlow" x="-25%" y="-25%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="0" stdDeviation="1.8" flood-color="#00FFAA" flood-opacity="0.9"/>
+    </filter>
+  </defs>
+
+  <!-- Laser Blade Glow & Body -->
+  <g filter="url(#zsaberGlow)">
+    <!-- Broad MMX4 Scimitar-style curved laser blade -->
+    <!-- Tip at (4,4), spine curving to (26, 17), cutting edge bulging to (17, 26) -->
+    <path d="M4 4 C10 16 18 24 25 18 L28 21 C21 28 16 20 4 4 Z" fill="url(#zsaberBeam)" stroke="#00FF88" stroke-width="0.8"/>
+    <!-- Blade Inner Hot Core -->
+    <path d="M5 5 C10 14 17 21 23 17 L25 19 C19 24 14 17 5 5 Z" fill="url(#zsaberCore)"/>
+    <!-- Pure White Central Beam Spine -->
+    <line x1="4" y1="4" x2="23" y2="23" stroke="#FFFFFF" stroke-width="1.4" stroke-linecap="round"/>
+  </g>
+
+  <!-- Emitter Guard Ring (Circular MMX4 style with emerald gem) -->
+  <circle cx="25.5" cy="25.5" r="4.5" fill="#00D26A" stroke="#0F172A" stroke-width="1"/>
+  <circle cx="25.5" cy="25.5" r="2.5" fill="#FFFFFF" opacity="0.85"/>
+
+  <!-- Cylindrical Handle / Hilt (Silver with dark grip bands) -->
+  <!-- Handle from (27, 27) to (41, 41) -->
+  <polygon points="26,29 29,26 41,38 38,41" fill="#E2E8F0" stroke="#0F172A" stroke-width="1"/>
+  <!-- Dark Grip Ribs -->
+  <line x1="30" y1="33" x2="33" y2="30" stroke="#334155" stroke-width="1.5"/>
+  <line x1="34" y1="37" x2="37" y2="34" stroke="#334155" stroke-width="1.5"/>
+
+  <!-- Spherical Pommel Base with Emerald Gem Cap -->
+  <circle cx="41.5" cy="41.5" r="4" fill="#00D26A" stroke="#0F172A" stroke-width="1"/>
+  <circle cx="40.5" cy="40.5" r="1.5" fill="#FFFFFF" opacity="0.9"/>
+</svg>

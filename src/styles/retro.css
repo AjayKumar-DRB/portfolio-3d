@@ -1,0 +1,448 @@
+/* ============================================
+   RETRO 32-BIT THEME — Component Styles
+   Megaman Zero inspired, pixel-perfect aesthetic
+   ============================================ */
+
+/* ---- Retro Button ---- */
+.retro-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-heading);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #FFFFFF;
+  background: var(--accent-primary);
+  border: 2px solid var(--border);
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+  transition: none;
+  image-rendering: pixelated;
+}
+
+.retro-btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--scanline-overlay);
+  pointer-events: none;
+  opacity: 0.2;
+}
+
+.retro-btn:hover {
+  transform: translate(2px, 2px);
+  box-shadow: var(--shadow-sm);
+  filter: brightness(1.08);
+}
+
+.retro-btn:active {
+  transform: translate(4px, 4px);
+  box-shadow: none;
+}
+
+.retro-btn--secondary {
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+  border: 2px solid var(--border);
+  box-shadow: var(--shadow-md);
+}
+
+.retro-btn--secondary:hover {
+  background: var(--bg-tertiary);
+  color: var(--accent-secondary);
+}
+
+.retro-btn--pink {
+  color: #FFFFFF;
+  background: var(--accent-primary);
+  border: 2px solid var(--border);
+  box-shadow: var(--shadow-md);
+}
+
+.retro-btn--gold {
+  color: #FFFFFF;
+  background: var(--accent-gold);
+  border: 2px solid var(--border);
+  box-shadow: var(--shadow-md);
+}
+
+.retro-btn--green {
+  color: #FFFFFF;
+  background: var(--accent-secondary);
+  border: 2px solid var(--border);
+  box-shadow: var(--shadow-md);
+}
+
+/* ---- Retro Card ---- */
+.retro-card {
+  position: relative;
+  background: var(--bg-secondary);
+  border: var(--border-style);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+.retro-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--pixel-grid);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.retro-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--scanline-overlay);
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.15;
+}
+
+.retro-card:hover {
+  border-color: var(--accent-primary);
+  box-shadow: var(--glow-blue);
+}
+
+/* ---- Energy Bar / Stat Bar ---- */
+.energy-bar {
+  position: relative;
+  height: 12px;
+  background: var(--bg-tertiary);
+  border: 2px solid var(--border);
+  overflow: hidden;
+  box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.energy-bar__fill {
+  height: 100%;
+  transition: width 0.8s steps(10);
+  image-rendering: pixelated;
+}
+
+.energy-bar__fill--blue {
+  background: var(--accent-tertiary);
+  box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.energy-bar__fill--pink {
+  background: var(--accent-primary);
+  box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.energy-bar__fill--green {
+  background: var(--accent-secondary);
+  box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.energy-bar__fill--orange {
+  background: var(--accent-gold);
+  box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.energy-bar__fill--gradient {
+  background: var(--gradient-energy);
+  box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* ---- HUD (Heads-Up Display) ---- */
+.retro-hud {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  padding: var(--sp-3) var(--sp-6);
+  font-family: var(--font-heading);
+  font-size: 8px;
+  color: var(--accent-primary);
+  pointer-events: none;
+}
+
+.retro-hud__level {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  text-shadow: var(--glow-blue);
+}
+
+/* ---- Level Title ---- */
+.level-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  color: var(--accent-gold);
+  text-shadow: var(--glow-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  text-align: center;
+}
+
+.level-subtitle {
+  font-family: var(--font-subheading);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  text-align: center;
+  margin-top: var(--sp-2);
+}
+
+/* ---- Pixel Border Decoration ---- */
+.pixel-border {
+  position: relative;
+}
+
+.pixel-border::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background:
+    linear-gradient(to right, var(--accent-primary) 4px, transparent 4px) 0 0 / 8px 2px repeat-x,
+    linear-gradient(to right, var(--accent-primary) 4px, transparent 4px) 0 100% / 8px 2px repeat-x,
+    linear-gradient(to bottom, var(--accent-primary) 4px, transparent 4px) 0 0 / 2px 8px repeat-y,
+    linear-gradient(to bottom, var(--accent-primary) 4px, transparent 4px) 100% 0 / 2px 8px repeat-y;
+  pointer-events: none;
+}
+
+/* ---- Boss Battle Card Specific ---- */
+.boss-card {
+  position: relative;
+  background: var(--bg-secondary);
+  border: 2px solid var(--border);
+  box-shadow: var(--shadow-md);
+  padding: 0;
+  overflow: hidden;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.boss-card__header {
+  padding: var(--sp-2) var(--sp-3);
+  background: var(--bg-tertiary);
+  border-bottom: 2px solid var(--border);
+  font-family: var(--font-heading);
+  font-size: 8px;
+  line-height: 1.4;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  min-height: 36px;
+}
+
+.boss-card__preview {
+  position: relative;
+  height: 160px;
+  background: var(--bg-tertiary);
+  overflow: hidden;
+  image-rendering: pixelated;
+}
+
+.boss-card__stats {
+  padding: var(--sp-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.boss-card__stat-row {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  font-family: var(--font-heading);
+  font-size: 8px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+}
+
+.boss-card__stat-label {
+  width: 32px;
+  flex-shrink: 0;
+}
+
+.boss-card__stat-bar {
+  flex: 1;
+}
+
+.boss-card__stat-value {
+  width: 32px;
+  text-align: right;
+  color: var(--text-primary);
+}
+
+.boss-card__difficulty {
+  padding: var(--sp-2) var(--sp-4);
+  font-family: var(--font-heading);
+  font-size: 8px;
+  color: var(--accent-warning);
+  text-transform: uppercase;
+}
+
+.boss-card__actions {
+  display: flex;
+  gap: 0;
+  border-top: 2px solid var(--border);
+}
+
+.boss-card__actions .retro-btn {
+  flex: 1;
+  border-radius: 0;
+  border: none;
+  border-right: 2px solid var(--border);
+  box-shadow: none;
+  padding: var(--sp-3);
+  font-size: 8px;
+}
+
+.boss-card__actions .retro-btn:last-child {
+  border-right: none;
+}
+
+.boss-card:hover {
+  border-color: var(--border);
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px var(--border), 0 0 15px rgba(225, 29, 72, 0.2);
+}
+
+/* ---- Weapon Wheel ---- */
+.weapon-wheel {
+  position: relative;
+  width: 360px;
+  height: 360px;
+  margin: 0 auto;
+}
+
+.weapon-wheel__center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 96px;
+  height: 96px;
+  background: rgba(30, 41, 59, 0.92);
+  backdrop-filter: blur(12px);
+  border: 2px solid var(--accent-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  box-shadow: 0 0 20px rgba(2, 132, 199, 0.35), inset 0 0 12px rgba(255, 255, 255, 0.05);
+  z-index: 10;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.weapon-wheel__node {
+  position: absolute;
+  width: 52px;
+  height: 52px;
+  background: rgba(30, 41, 59, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  z-index: 5;
+  user-select: none;
+}
+
+.weapon-wheel__node:hover {
+  border-color: var(--accent-primary);
+  background: rgba(51, 65, 85, 0.95);
+  box-shadow: 0 0 16px var(--accent-primary), inset 0 0 10px rgba(0, 255, 170, 0.25);
+  z-index: 10;
+}
+
+.weapon-wheel__node--active {
+  border-color: var(--accent-gold);
+  box-shadow: var(--glow-gold);
+}
+
+.weapon-wheel__rank-badge {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  font-family: var(--font-heading);
+  font-size: 7px;
+  line-height: 1;
+  padding: 1px 3px;
+  background: rgba(9, 9, 11, 0.85);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  font-weight: bold;
+}
+
+.weapon-wheel__connector {
+  position: absolute;
+  background: var(--border);
+  z-index: 0;
+}
+
+
+/* ---- Scroll Progress Bar (Retro) ---- */
+.retro-scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: var(--gradient-energy);
+  z-index: 100;
+  image-rendering: pixelated;
+  transition: width 0.1s steps(20);
+}
+
+/* ---- Section Divider (Pixel Pattern) ---- */
+.retro-divider {
+  width: 100%;
+  height: 4px;
+  background:
+    linear-gradient(to right,
+      transparent 0%,
+      var(--accent-primary) 10%,
+      var(--accent-primary) 50%,
+      var(--accent-secondary) 50%,
+      var(--accent-secondary) 90%,
+      transparent 100%
+    );
+  image-rendering: pixelated;
+}
+
+/* ---- Blink Animation (retro cursor) ---- */
+@keyframes retro-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.retro-blink {
+  animation: retro-blink 0.8s steps(1) infinite;
+}
+
+/* ---- CRT Flicker ---- */
+@keyframes crt-flicker {
+  0% { opacity: 0.97; }
+  5% { opacity: 0.95; }
+  10% { opacity: 0.98; }
+  15% { opacity: 0.96; }
+  20% { opacity: 0.99; }
+  100% { opacity: 1; }
+}
+
+.crt-flicker {
+  animation: crt-flicker 4s linear infinite;
+}
+
+/* ---- Pixel Text Shadow ---- */
+.pixel-text-shadow {
+  text-shadow:
+    2px 0 var(--bg-primary),
+    -2px 0 var(--bg-primary),
+    0 2px var(--bg-primary),
+    0 -2px var(--bg-primary);
+}
