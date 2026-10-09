@@ -5,11 +5,8 @@ import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
-import { useThemeStore } from '@/stores/themeStore';
-import { socialLinks, contactInfo } from '@/data/social';
 import { toast } from 'sonner';
 import { SectionHeader } from '@/components/common/SectionHeader';
-import { PulsingOrb } from '@/components/sleek/PulsingOrb';
 import { useAudio } from '@/hooks/useAudio';
 
 const formSchema = z.object({
@@ -45,10 +42,19 @@ const RETRO_CHANNELS = [
   },
 ];
 
+const retroInput = {
+  fontFamily: 'var(--font-body)',
+  fontSize: '12px',
+  padding: '10px 12px',
+  background: '#FAFAF8',
+  border: '2px solid #0F172A',
+  color: '#0F172A',
+  outline: 'none',
+  width: '100%',
+};
+
 export function CTASection() {
-  const theme = useThemeStore((s) => s.theme);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const isRetro = theme === 'retro';
   const { playHover } = useAudio();
 
   const {
@@ -89,140 +95,18 @@ export function CTASection() {
         throw new Error(result.message || 'Failed to send transmission');
       }
 
-      toast.success(isRetro ? 'TRANSMISSION SENT!' : 'Message dispatched!', {
-        description: isRetro
-          ? 'Transmission received. Frequency locked.'
-          : "Thanks for reaching out! I'll reply promptly.",
+      toast.success('TRANSMISSION SENT!', {
+        description: 'Transmission received. Frequency locked.',
       });
       reset();
     } catch {
-      toast.error(isRetro ? 'TRANSMISSION FAILED' : 'Failed to send message', {
+      toast.error('TRANSMISSION FAILED', {
         description: 'Please try again or connect directly via LinkedIn or email.',
       });
     } finally {
       setIsSubmitting(false);
     }
   }
-
-  // ── Sleek theme ──────────────────────────────────────────────────────────
-  if (!isRetro) {
-    const sleekInput = {
-      fontFamily: 'var(--font-body)',
-      fontSize: 'var(--text-sm)',
-      padding: 'var(--sp-3) var(--sp-4)',
-      background: 'var(--bg-tertiary)',
-      border: 'var(--border-style)',
-      borderRadius: 'var(--border-radius)',
-      color: 'var(--text-primary)',
-      outline: 'none',
-      width: '100%',
-    };
-    return (
-      <section id="contact" className="z-10 relative bg-transparent py-16 md:py-24 border-slate-900 border-b-2">
-        <div className="mx-auto px-6 container">
-          <SectionHeader
-            stage="STAGE 05"
-            retroTitle="LET'S BUILD"
-            sleekTitle="LET'S BUILD SOMETHING GREAT"
-            subtitle={contactInfo.subtext}
-            accentColor="#E11D48"
-          />
-          <div className="flex justify-center -mt-8 mb-12">
-            <PulsingOrb />
-          </div>
-          <motion.div
-            className="gap-12 lg:gap-24 grid"
-            style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', maxWidth: '960px', margin: '0 auto' }}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-15%' }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] as const }}
-          >
-            {/* Social links */}
-            <div className="flex flex-col gap-4">
-              {socialLinks.map((link) => (
-                <a
-                  key={link.id}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-3 no-underline transition-all duration-150"
-                  style={{
-                    fontFamily: 'var(--font-body)',
-                    fontSize: 'var(--text-sm)',
-                    color: 'var(--text-secondary)',
-                    textDecoration: 'none',
-                    background: 'var(--bg-secondary)',
-                    border: 'var(--border-style)',
-                    borderRadius: 'var(--border-radius)',
-                  }}
-                  onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLElement).style.borderColor = 'var(--accent-primary)';
-                    (e.currentTarget as HTMLElement).style.color = 'var(--text-primary)';
-                  }}
-                  onMouseLeave={(e) => {
-                    (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,0.05)';
-                    (e.currentTarget as HTMLElement).style.color = 'var(--text-secondary)';
-                  }}
-                >
-                  <span style={{ fontSize: '18px' }}>
-                    {link.icon === 'GithubLogo' && '⌘'}
-                    {link.icon === 'LinkedinLogo' && '◈'}
-                    {link.icon === 'TwitterLogo' && '✦'}
-                    {link.icon === 'DiscordLogo' && '◆'}
-                    {link.icon === 'Envelope' && '✉'}
-                  </span>
-                  {link.label}
-                </a>
-              ))}
-            </div>
-
-            {/* Contact form */}
-            <div style={{ padding: 'var(--sp-6)', background: 'var(--bg-secondary)', border: 'var(--border-style)', borderRadius: 'var(--border-radius)' }}>
-              <form onSubmit={handleSubmit(onSubmit)} style={{ display: 'flex', flexDirection: 'column', gap: 'var(--sp-4)' }}>
-                <div className="gap-4 grid grid-cols-2">
-                  <div>
-                    <label style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--text-xs)', color: 'var(--text-secondary)', display: 'block', marginBottom: 'var(--sp-2)' }}>Name</label>
-                    <input {...register('name')} placeholder="Your name" style={sleekInput} />
-                    {errors.name && <p style={{ color: 'var(--accent-secondary)', fontSize: '11px', marginTop: '4px' }}>{errors.name.message}</p>}
-                  </div>
-                  <div>
-                    <label style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--text-xs)', color: 'var(--text-secondary)', display: 'block', marginBottom: 'var(--sp-2)' }}>Email</label>
-                    <input {...register('email')} type="email" placeholder="your@email.com" style={sleekInput} />
-                    {errors.email && <p style={{ color: 'var(--accent-secondary)', fontSize: '11px', marginTop: '4px' }}>{errors.email.message}</p>}
-                  </div>
-                </div>
-                <div>
-                  <label style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--text-xs)', color: 'var(--text-secondary)', display: 'block', marginBottom: 'var(--sp-2)' }}>Message</label>
-                  <textarea {...register('message')} placeholder="Tell me about your project..." rows={5} style={{ ...sleekInput, resize: 'none' as const }} />
-                  {errors.message && <p style={{ color: 'var(--accent-secondary)', fontSize: '11px', marginTop: '4px' }}>{errors.message.message}</p>}
-                </div>
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  style={{ padding: 'var(--sp-3) var(--sp-6)', background: 'var(--accent-primary)', color: 'var(--bg-primary)', border: 'none', borderRadius: 'var(--border-radius)', fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 'var(--text-sm)', cursor: isSubmitting ? 'wait' : 'pointer', opacity: isSubmitting ? 0.7 : 1 }}
-                >
-                  {isSubmitting ? 'Sending...' : 'Send Message →'}
-                </button>
-              </form>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-    );
-  }
-
-  // ── Retro theme ──────────────────────────────────────────────────────────
-  const retroInput = {
-    fontFamily: 'var(--font-body)',
-    fontSize: '12px',
-    padding: '10px 12px',
-    background: '#FAFAF8',
-    border: '2px solid #0F172A',
-    color: '#0F172A',
-    outline: 'none',
-    width: '100%',
-  };
 
   return (
     <section
@@ -232,8 +116,7 @@ export function CTASection() {
       <div className="mx-auto px-6 container">
         <SectionHeader
           stage="STAGE 05"
-          retroTitle="LET'S BUILD"
-          sleekTitle="LET'S BUILD"
+          title="LET'S BUILD"
           subtitle="Hire me for your next ambitious project — open a channel below."
           accentColor="#E11D48"
         />
@@ -353,7 +236,7 @@ export function CTASection() {
               )}
             </div>
 
-            {/* Submit button matching reference image 2 and other action buttons */}
+            {/* Submit button */}
             <button
               type="submit"
               disabled={isSubmitting}

@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 
-export type Theme = 'retro' | 'sleek';
+export type Theme = 'retro';
 export type PerformanceTier = 'high' | 'medium' | 'low';
 
 interface ThemeState {
@@ -19,7 +19,6 @@ interface ThemeState {
   audioEnabled: boolean;
 
   // Actions
-  setTheme: (theme: Theme) => void;
   setScrollProgress: (progress: number) => void;
   setCurrentSection: (section: string) => void;
   setPerformanceTier: (tier: PerformanceTier) => void;
@@ -35,21 +34,9 @@ export const useThemeStore = create<ThemeState>((set) => ({
   shouldRenderWebGL: true,
   audioEnabled: true,
 
-  setTheme: (theme) => {
-    if (typeof document !== 'undefined') {
-      document.documentElement.setAttribute('data-theme', theme);
-      localStorage.setItem('portfolio-theme', theme);
-    }
-    set({ theme });
-  },
-
   setScrollProgress: (progress) => set({ scrollProgress: progress }),
-
   setCurrentSection: (section) => set({ currentSection: section }),
-
   setPerformanceTier: (tier) => set({ performanceTier: tier }),
-
   setShouldRenderWebGL: (should) => set({ shouldRenderWebGL: should }),
-
   toggleAudio: () => set((state) => ({ audioEnabled: !state.audioEnabled })),
 }));

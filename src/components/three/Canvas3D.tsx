@@ -8,15 +8,11 @@ import { getQualitySettings } from '@/lib/device-detector';
 const RetroScene = lazy(() =>
   import('./RetroScene').then((m) => ({ default: m.RetroScene }))
 );
-const SleekScene = lazy(() =>
-  import('./SleekScene').then((m) => ({ default: m.SleekScene }))
-);
 const PostProcessing = lazy(() =>
   import('./PostProcessing').then((m) => ({ default: m.PostProcessing }))
 );
 
 export function Canvas3D() {
-  const theme = useThemeStore((s) => s.theme);
   const performanceTier = useThemeStore((s) => s.performanceTier);
   const shouldRenderWebGL = useThemeStore((s) => s.shouldRenderWebGL);
 
@@ -44,7 +40,7 @@ export function Canvas3D() {
         style={{ background: 'transparent' }}
       >
         <Suspense fallback={null}>
-          {theme === 'retro' ? <RetroScene /> : <SleekScene />}
+          <RetroScene />
           {quality.postProcessing && <PostProcessing />}
         </Suspense>
       </Canvas>

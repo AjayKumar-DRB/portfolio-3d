@@ -2,14 +2,10 @@
 
 import { motion } from 'framer-motion';
 import { projects } from '@/data/projects';
-import { useThemeStore } from '@/stores/themeStore';
 import { BossBattleCard } from '@/components/retro/BossBattleCard';
-import { GlassCard } from '@/components/sleek/GlassCard';
 import { SectionHeader } from '@/components/common/SectionHeader';
 
 export function ProjectsSection() {
-  const theme = useThemeStore((s) => s.theme);
-
   return (
     <section
       id="projects"
@@ -19,8 +15,7 @@ export function ProjectsSection() {
         {/* Prominent Header Matching User Image 2 */}
         <SectionHeader
           stage="STAGE 03"
-          retroTitle="BOSS BATTLES & PROJECTS"
-          sleekTitle="FEATURED PROJECTS & MISSIONS"
+          title="BOSS BATTLES & PROJECTS"
           subtitle="Select a target mission card to view battle intel, stack specs and live deployment."
           accentColor="#00FFAA"
         />
@@ -43,11 +38,7 @@ export function ProjectsSection() {
               viewport={{ once: true, margin: '-15%' }}
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] as const, delay: index * 0.1 }}
             >
-              {theme === 'retro' ? (
-                <BossBattleCard project={project} index={index} />
-              ) : (
-                <GlassCard project={project} index={index} />
-              )}
+              <BossBattleCard project={project} index={index} />
             </motion.div>
           ))}
         </div>

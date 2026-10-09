@@ -3,8 +3,6 @@ import {
   Press_Start_2P,
   Silkscreen,
   IBM_Plex_Mono,
-  Outfit,
-  Inter,
   JetBrains_Mono,
   Bebas_Neue,
 } from 'next/font/google';
@@ -40,21 +38,6 @@ const ibmPlexMono = IBM_Plex_Mono({
   display: 'swap',
 });
 
-// ---- Sleek Fonts ----
-const outfit = Outfit({
-  weight: ['600', '700', '800'],
-  subsets: ['latin'],
-  variable: '--font-outfit',
-  display: 'swap',
-});
-
-const inter = Inter({
-  weight: ['400', '500', '600'],
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
-});
-
 // ---- Shared ----
 const jetbrainsMono = JetBrains_Mono({
   weight: '400',
@@ -70,7 +53,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Ajay Kumar DRB — Developer Portfolio',
     description:
-      'Full-stack developer. Systems thinker. Interactive 3D portfolio with dual themes.',
+      'Full-stack developer. Systems thinker. Interactive 3D retro portfolio experience.',
     type: 'website',
     locale: 'en_US',
   },
@@ -102,8 +85,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         ${pressStart2P.variable}
         ${silkscreen.variable}
         ${ibmPlexMono.variable}
-        ${outfit.variable}
-        ${inter.variable}
         ${jetbrainsMono.variable}
         ${bebasNeue.variable}
         antialiased

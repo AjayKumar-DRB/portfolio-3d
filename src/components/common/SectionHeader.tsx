@@ -1,12 +1,11 @@
 'use client';
 
-import { useThemeStore } from '@/stores/themeStore';
 import { cn } from '@/lib/utils';
 
 interface SectionHeaderProps {
   stage?: string;
-  retroTitle: string;
-  sleekTitle: string;
+  title?: string;
+  retroTitle?: string;
   subtitle: string;
   className?: string;
   accentColor?: string;
@@ -15,16 +14,13 @@ interface SectionHeaderProps {
 
 export function SectionHeader({
   stage,
+  title,
   retroTitle,
-  sleekTitle,
   subtitle,
   className,
-  accentColor = '#00FFAA',
   badge,
 }: SectionHeaderProps) {
-  const theme = useThemeStore((s) => s.theme);
-  const isRetro = theme === 'retro';
-  const displayTitle = isRetro ? retroTitle : sleekTitle;
+  const displayTitle = title || retroTitle || '';
 
   return (
     <div className={cn('mb-10 md:mb-14 text-left select-none', className)}>
@@ -34,32 +30,27 @@ export function SectionHeader({
           {/* Stage / Section Tag */}
           {stage && (
             <div
-              className={cn(
-                'mb-2.5 font-bold uppercase select-none',
-                isRetro
-                  ? 'text-rose-600 font-mono tracking-[0.2em] text-[11px]'
-                  : 'inline-block px-3 py-1 rounded-sm text-xs font-mono tracking-widest'
-              )}
+              className="mb-2.5 font-bold uppercase select-none text-rose-600 font-mono tracking-[0.2em] text-[11px]"
               style={{
-                fontFamily: isRetro ? 'var(--font-heading)' : 'var(--font-jetbrains-mono)',
-                color: isRetro ? '#E11D48' : accentColor,
-                background: isRetro ? 'transparent' : `${accentColor}15`,
-                border: isRetro ? 'none' : `1px solid ${accentColor}33`,
+                fontFamily: 'var(--font-heading)',
+                color: '#E11D48',
+                background: 'transparent',
+                border: 'none',
               }}
             >
               {stage}
             </div>
           )}
 
-          {/* Heading - Styled matching User Image 3 font size, weight and Bebas Neue display typography */}
+          {/* Heading - Bebas Neue display typography */}
           <h2
             className="block font-bold uppercase tracking-tight text-left"
             style={{
-              fontFamily: isRetro ? 'var(--font-display)' : 'var(--font-outfit)',
-              fontSize: isRetro ? 'clamp(2.4rem, 5.2vw, 3.8rem)' : 'clamp(28px, 4.5vw, 48px)',
+              fontFamily: 'var(--font-display)',
+              fontSize: 'clamp(2.4rem, 5.2vw, 3.8rem)',
               fontWeight: 700,
-              color: isRetro ? '#0F172A' : 'var(--text-primary)',
-              letterSpacing: isRetro ? '-0.01em' : '-0.02em',
+              color: '#0F172A',
+              letterSpacing: '-0.01em',
               lineHeight: 0.95,
               textShadow: 'none',
               marginTop: '4px',
@@ -71,12 +62,12 @@ export function SectionHeader({
             </span>
           </h2>
 
-          {/* Subtitle - Relaxed font size & weight matching Image 3 */}
+          {/* Subtitle */}
           <p
             className="text-left text-sm sm:text-base leading-relaxed max-w-3xl"
             style={{
-              fontFamily: isRetro ? 'var(--font-body)' : 'var(--font-inter)',
-              color: isRetro ? '#334155' : 'var(--text-secondary)',
+              fontFamily: 'var(--font-body)',
+              color: '#334155',
               fontWeight: 400,
               lineHeight: 1.6,
             }}
@@ -85,8 +76,8 @@ export function SectionHeader({
           </p>
         </div>
 
-        {/* Optional Right Badge (e.g. "LV.01 · LV.09" from Image 1) */}
-        {badge && isRetro && (
+        {/* Optional Right Badge (e.g. "LV.01 · LV.09") */}
+        {badge && (
           <div className="self-start sm:self-center px-3 py-1.5 bg-white border-2 border-slate-900 shadow-[3px_3px_0px_#0F172A] text-slate-900 font-mono text-xs font-bold tracking-wider select-none">
             {badge}
           </div>

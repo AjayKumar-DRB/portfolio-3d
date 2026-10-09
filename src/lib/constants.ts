@@ -48,10 +48,4 @@ export const SCENE_CONFIG = {
     terrainSegments: 64,
     terrainSize: 20,
   },
-  sleek: {
-    bloomIntensity: 1.5,
-    bloomThreshold: 0.2,
-    terrainSegments: 128,
-    terrainSize: 30,
-  },
 } as const;

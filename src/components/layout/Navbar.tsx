@@ -8,21 +8,18 @@ import { useScrollContext } from '@/components/providers/ScrollProvider';
 import { cn } from '@/lib/utils';
 
 const navItems = [
-  { id: 'hero', label: 'Home', retroLabel: 'HOME', num: '01' },
-  { id: 'story', label: 'Story', retroLabel: 'PATH', num: '02' },
-  { id: 'projects', label: 'Projects', retroLabel: 'BOSSES', num: '03' },
-  { id: 'skills', label: 'Skills', retroLabel: 'WEAPONS', num: '04' },
-  { id: 'contact', label: 'Contact', retroLabel: 'COMMS', num: '05' },
+  { id: 'hero', label: 'HOME', num: '01' },
+  { id: 'story', label: 'PATH', num: '02' },
+  { id: 'projects', label: 'BOSSES', num: '03' },
+  { id: 'skills', label: 'WEAPONS', num: '04' },
+  { id: 'contact', label: 'COMMS', num: '05' },
 ];
 
 export function Navbar() {
-  const theme = useThemeStore((s) => s.theme);
   const currentSection = useThemeStore((s) => s.currentSection);
   const setCurrentSection = useThemeStore((s) => s.setCurrentSection);
-  const scrollProgress = useThemeStore((s) => s.scrollProgress);
   const { audioEnabled, toggleAudio, playHover, playPowerup, playClick } = useAudio();
   const { lenisRef } = useScrollContext();
-  const isScrolled = scrollProgress > 0.01;
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // Track active section live on scroll
@@ -54,8 +51,6 @@ export function Navbar() {
     };
   }, [setCurrentSection]);
 
-  const isRetro = theme === 'retro';
-
   // Smooth scroll handler using Lenis
   const handleNavClick = (e: React.MouseEvent, id: string) => {
     e.preventDefault();
@@ -80,10 +75,9 @@ export function Navbar() {
         style={{
           height: '48px',
           padding: '0 16px',
-          background: isRetro ? '#F5F2EB' : isScrolled ? 'rgba(255, 255, 255, 0.94)' : 'rgba(248, 250, 252, 0.85)',
+          background: '#F5F2EB',
           backdropFilter: 'blur(12px)',
-          borderBottom: isRetro ? '2px solid #0F172A' : isScrolled ? '2px solid var(--border)' : '1px solid rgba(15, 23, 42, 0.08)',
-          boxShadow: isScrolled ? '0 4px 12px rgba(15, 23, 42, 0.05)' : 'none',
+          borderBottom: '2px solid #0F172A',
         }}
       >
         <div className="container mx-auto flex items-center justify-between gap-2 sm:gap-4">
@@ -92,16 +86,11 @@ export function Navbar() {
             href="#hero"
             onClick={(e) => handleNavClick(e, 'hero')}
             onMouseEnter={playHover}
-            className={cn(
-              'flex items-center gap-1.5 select-none focus:outline-none transition-all duration-75 cursor-pointer',
-              isRetro
-                ? 'px-3 py-1 bg-rose-600 text-white border-0 shadow-[2px_2px_0px_#0F172A] hover:bg-rose-500 hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0px_#0F172A] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none'
-                : 'text-slate-900 font-bold'
-            )}
+            className="flex items-center gap-1.5 select-none focus:outline-none transition-all duration-75 cursor-pointer px-3 py-1 bg-rose-600 text-white border-0 shadow-[2px_2px_0px_#0F172A] hover:bg-rose-500 hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0px_#0F172A] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
             style={{
-              fontFamily: isRetro ? 'var(--font-heading)' : 'var(--font-outfit)',
-              fontSize: isRetro ? '10px' : 'var(--text-lg)',
-              letterSpacing: isRetro ? '0.12em' : '-0.01em',
+              fontFamily: 'var(--font-heading)',
+              fontSize: '10px',
+              letterSpacing: '0.12em',
               textDecoration: 'none',
             }}
           >
@@ -109,7 +98,7 @@ export function Navbar() {
             <span>AK.DRB</span>
           </a>
 
-          {/* Nav links (Desktop & Tablet: >= 768px) - Matching mock numbered styling */}
+          {/* Nav links (Desktop & Tablet: >= 768px) */}
           <div className="hidden md:flex items-center gap-3 lg:gap-5">
             {navItems.map((item) => {
               const isActive = currentSection === item.id;
@@ -120,17 +109,17 @@ export function Navbar() {
                   onMouseEnter={playHover}
                   className={cn(
                     'px-2.5 py-1 transition-all text-left flex items-center gap-1.5 select-none font-mono text-[10px] font-bold tracking-wider uppercase',
-                    isActive && isRetro
+                    isActive
                       ? 'bg-white border-2 border-rose-600 text-slate-900 shadow-[2px_2px_0px_#E11D48]'
                       : 'border-2 border-transparent hover:border-slate-300'
                   )}
                   style={{
-                    fontFamily: isRetro ? 'var(--font-body)' : 'var(--font-inter)',
+                    fontFamily: 'var(--font-body)',
                   }}
                 >
                   <span className="text-rose-600 font-bold text-[9px]">{item.num}</span>
                   <span className={isActive ? 'text-slate-950 font-bold' : 'text-slate-700 font-medium'}>
-                    {isRetro ? item.retroLabel : item.label}
+                    {item.label}
                   </span>
                 </button>
               );
@@ -139,12 +128,9 @@ export function Navbar() {
 
           {/* Top Right Controls & Status Indicator */}
           <div className="flex items-center gap-2 sm:gap-2.5">
-            {/* Live Developer Status Badge - Green Button Matching Mock */}
+            {/* Live Developer Status Badge */}
             <div
-              className={cn(
-                'hidden sm:flex items-center gap-2 px-3 py-1 border-2 border-slate-900 shadow-[2px_2px_0px_#0F172A] select-none',
-                isRetro ? 'bg-emerald-600 text-white' : 'bg-emerald-50 text-emerald-800'
-              )}
+              className="hidden sm:flex items-center gap-2 px-3 py-1 border-2 border-slate-900 shadow-[2px_2px_0px_#0F172A] select-none bg-emerald-600 text-white"
               title="Full-Stack Developer available for immediate hiring"
             >
               <span className="text-white font-mono text-[9px] font-bold tracking-wider uppercase">
@@ -163,8 +149,8 @@ export function Navbar() {
               onMouseEnter={playHover}
               className="px-2 py-1 bg-white border-2 border-slate-900 shadow-[2px_2px_0px_#0F172A] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none flex items-center gap-1.5 transition-transform"
               style={{
-                fontFamily: isRetro ? 'var(--font-heading)' : 'var(--font-body)',
-                fontSize: isRetro ? '7px' : '11px',
+                fontFamily: 'var(--font-heading)',
+                fontSize: '7px',
                 color: audioEnabled ? 'var(--accent-primary)' : 'var(--text-dim)',
               }}
               title={audioEnabled ? 'Mute 8-bit music & SFX' : 'Enable 8-bit music & SFX'}
@@ -220,8 +206,8 @@ export function Navbar() {
                     onMouseEnter={playHover}
                     className="w-full p-2.5 text-left border-2 flex items-center justify-between transition-all"
                     style={{
-                      fontFamily: isRetro ? 'var(--font-heading)' : 'var(--font-body)',
-                      fontSize: isRetro ? '8px' : '13px',
+                      fontFamily: 'var(--font-heading)',
+                      fontSize: '8px',
                       borderColor: '#0F172A',
                       background: isActive ? '#FFE4E6' : '#FFFFFF',
                       boxShadow: isActive ? '3px 3px 0px #E11D48' : '3px 3px 0px #0F172A',
@@ -230,7 +216,7 @@ export function Navbar() {
                   >
                     <span className="flex items-center gap-2">
                       <span className="font-mono text-[8px] opacity-60">[{item.num}]</span>
-                      <span>{isRetro ? item.retroLabel : item.label}</span>
+                      <span>{item.label}</span>
                     </span>
                     {isActive && (
                       <span className="text-[7px] font-mono font-bold text-rose-600">● ACTIVE</span>

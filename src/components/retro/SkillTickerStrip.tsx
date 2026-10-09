@@ -1,22 +1,18 @@
 'use client';
 
-import { useThemeStore } from '@/stores/themeStore';
 import portfolioData from '@/data/portfolioData.json';
 
 const tickerItems = portfolioData.softSkillStrip;
 
 export function SkillTickerStrip() {
-  const theme = useThemeStore((s) => s.theme);
-  const isRetro = theme === 'retro';
-
   return (
     <div
       className="w-full relative z-20 overflow-hidden select-none"
       style={{
-        background: isRetro ? '#E11D48' : 'var(--bg-secondary)',
+        background: '#E11D48',
         borderTop: '2px solid #0F172A',
         borderBottom: '2px solid #0F172A',
-        boxShadow: isRetro ? '0 2px 8px rgba(225, 29, 72, 0.25)' : 'none',
+        boxShadow: '0 2px 8px rgba(225, 29, 72, 0.25)',
       }}
       aria-label="Soft skills and mission chapters ticker"
     >
@@ -28,9 +24,9 @@ export function SkillTickerStrip() {
               key={idx}
               className="inline-flex items-center gap-3 px-3"
               style={{
-                fontFamily: isRetro ? 'var(--font-heading)' : 'var(--font-jetbrains-mono)',
-                fontSize: isRetro ? '10px' : '11px',
-                color: isRetro ? '#FFFFFF' : 'var(--text-primary)',
+                fontFamily: 'var(--font-heading)',
+                fontSize: '10px',
+                color: '#FFFFFF',
                 letterSpacing: '0.12em',
                 fontWeight: 700,
               }}

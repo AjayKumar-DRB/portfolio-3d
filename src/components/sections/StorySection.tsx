@@ -4,7 +4,6 @@ import { useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useThemeStore } from '@/stores/themeStore';
 import { SectionHeader } from '@/components/common/SectionHeader';
 import portfolioData from '@/data/portfolioData.json';
 import { careerChapters } from '@/data/career';
@@ -13,8 +12,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 export function StorySection() {
   const sectionRef = useRef<HTMLElement>(null);
-  const theme = useThemeStore((s) => s.theme);
-  const isRetro = theme === 'retro';
   const { education, certifications, strengths, philosophy } = portfolioData;
 
   useEffect(() => {
@@ -45,14 +42,13 @@ export function StorySection() {
       id="story"
       className="relative z-10 py-16 md:py-24 border-b-2 border-slate-900"
       style={{
-        background: isRetro ? '#F5F2EB' : 'var(--bg-primary)',
+        background: '#F5F2EB',
       }}
     >
       <div className="container mx-auto px-6">
         <SectionHeader
           stage="STAGE 02"
-          retroTitle="CAREER CHRONICLES"
-          sleekTitle="CAREER PATH & EXPERIENCE"
+          title="CAREER CHRONICLES"
           subtitle="From mechanical engineering curiosity to frontend-focused full-stack product engineering."
           accentColor="#FFD700"
           badge={`LV.01 · LV.0${careerChapters.length}`}
