@@ -5,6 +5,7 @@ import {
   IBM_Plex_Mono,
   JetBrains_Mono,
   Bebas_Neue,
+  VT323,
 } from 'next/font/google';
 import './globals.css';
 import { Toaster } from 'sonner';
@@ -35,6 +36,13 @@ const ibmPlexMono = IBM_Plex_Mono({
   weight: ['400', '500'],
   subsets: ['latin'],
   variable: '--font-ibm-plex-mono',
+  display: 'swap',
+});
+
+const vt323 = VT323({
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-vt323',
   display: 'swap',
 });
 
@@ -87,6 +95,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         ${ibmPlexMono.variable}
         ${jetbrainsMono.variable}
         ${bebasNeue.variable}
+        ${vt323.variable}
         antialiased
       `}
     >
@@ -105,7 +114,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           }}
         />
       </head>
-      <body style={{ minHeight: '100vh' }}>
+      <body className="min-h-screen">
         {/* Accessibility: Skip link */}
         <a href="#hero" className="skip-link">
           Skip to main content

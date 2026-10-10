@@ -22,6 +22,11 @@ export interface Skill {
   description?: string;
   /** Recommended tech pair */
   pairs?: string;
+  /** Real-world deployment contexts */
+  usedIn?: {
+    projects?: string[];
+    companies?: string[];
+  };
 }
 
 export interface SkillCategory {

@@ -1,6 +1,6 @@
 {
   "identity": {
-    "name": "Ajay Kumar D R B",
+    "name": "Ajay Kumar DRB",
     "nameShort": "AK.DRB",
     "title": "Frontend-focused Full Stack Developer",
     "tagline": "Frontend-focused Full Stack Engineer who enjoys turning ambiguous problems into practical software products.",
@@ -294,7 +294,11 @@
             "use": 95,
             "color": "#2563EB",
             "description": "Primary UI library for component-driven interfaces. Deep experience with hooks, state, context, and virtual DOM across production SaaS.",
-            "pairs": "Next.js"
+            "pairs": "Next.js",
+            "usedIn": {
+              "projects": ["ZapCart", "Golden Gauge"],
+              "companies": ["Konnectify"]
+            }
           },
           {
             "id": "nextjs",
@@ -306,7 +310,11 @@
             "color": "#2563EB",
             "description": "Full-stack React framework. Production routing, SSR/SSG, server actions, API routes, and optimized client bundles.",
             "pairs": "TypeScript",
-            "parentSkill": "React.js"
+            "parentSkill": "React.js",
+            "usedIn": {
+              "projects": ["SystemMapper"],
+              "companies": ["Konnectify"]
+            }
           },
           {
             "id": "typescript",
@@ -317,7 +325,11 @@
             "use": 90,
             "color": "#2563EB",
             "description": "Strongly-typed JavaScript for scalable frontend and backend architectures. Strict types, generics, and API contract safety.",
-            "pairs": "React.js"
+            "pairs": "React.js",
+            "usedIn": {
+              "projects": ["SystemMapper"],
+              "companies": ["Konnectify"]
+            }
           },
           {
             "id": "redux",
@@ -329,7 +341,11 @@
             "color": "#2563EB",
             "description": "Predictable state container for complex application flows. Centralized cart, filtering, and checkout state in ZapCart.",
             "pairs": "React.js",
-            "parentSkill": "React.js"
+            "parentSkill": "React.js",
+            "usedIn": {
+              "projects": ["ZapCart"],
+              "companies": []
+            }
           },
           {
             "id": "tailwind",
@@ -341,7 +357,11 @@
             "color": "#2563EB",
             "description": "Utility-first CSS framework for rapid UI development. Responsive layouts, dark mode tokens, and custom animation styling.",
             "pairs": "React.js",
-            "parentSkill": "React.js"
+            "parentSkill": "React.js",
+            "usedIn": {
+              "projects": ["ZapCart"],
+              "companies": ["Konnectify"]
+            }
           }
         ]
       },
@@ -360,7 +380,11 @@
             "use": 90,
             "color": "#16A34A",
             "description": "Asynchronous event-driven JavaScript runtime powering high-throughput backend services, worker queues, and REST APIs.",
-            "pairs": "Express.js"
+            "pairs": "Express.js",
+            "usedIn": {
+              "projects": ["ZapCart", "Golden Gauge", "SystemMapper"],
+              "companies": ["Konnectify"]
+            }
           },
           {
             "id": "express",
@@ -372,7 +396,11 @@
             "color": "#16A34A",
             "description": "Minimalist server framework for RESTful routing, custom middleware pipelines, authentication gates, and error handlers.",
             "pairs": "Node.js",
-            "parentSkill": "Node.js"
+            "parentSkill": "Node.js",
+            "usedIn": {
+              "projects": ["ZapCart", "Golden Gauge"],
+              "companies": []
+            }
           },
           {
             "id": "nestjs",
@@ -384,7 +412,11 @@
             "color": "#16A34A",
             "description": "Enterprise Node.js framework with TypeScript, decorators, dependency injection, and modular architecture used at Konnectify.",
             "pairs": "PostgreSQL",
-            "parentSkill": "Node.js"
+            "parentSkill": "Node.js",
+            "usedIn": {
+              "projects": [],
+              "companies": ["Konnectify"]
+            }
           },
           {
             "id": "python",
@@ -395,7 +427,10 @@
             "use": 65,
             "color": "#16A34A",
             "description": "First programming language learned. Used for algorithms, interview cookbook guide, data structures, and automation scripts.",
-            "pairs": "REST APIs"
+            "usedIn": {
+              "projects": ["Python Cookbook"],
+              "companies": []
+            }
           },
           {
             "id": "restapis",
@@ -406,7 +441,10 @@
             "use": 95,
             "color": "#16A34A",
             "description": "API contract design, HTTP methods, status codes, webhook triggers, and third-party connector communications.",
-            "pairs": "Postman"
+            "usedIn": {
+              "projects": ["Golden Gauge", "SystemMapper"],
+              "companies": ["Konnectify"]
+            }
           }
         ]
       },
@@ -425,7 +463,11 @@
             "use": 80,
             "color": "#7C3AED",
             "description": "Relational database used in production at Konnectify. Complex queries, joins, foreign keys, migrations, and performance indexing.",
-            "pairs": "NestJS"
+            "pairs": "NestJS",
+            "usedIn": {
+              "projects": ["SystemMapper"],
+              "companies": ["Konnectify"]
+            }
           },
           {
             "id": "mongodb",
@@ -436,7 +478,11 @@
             "use": 82,
             "color": "#7C3AED",
             "description": "NoSQL document database for flexible schema applications. Modeled e-commerce catalogs in ZapCart with Mongoose ODM.",
-            "pairs": "Node.js"
+            "pairs": "Node.js",
+            "usedIn": {
+              "projects": ["ZapCart"],
+              "companies": []
+            }
           },
           {
             "id": "redis",
@@ -447,8 +493,11 @@
             "use": 55,
             "color": "#7C3AED",
             "description": "In-memory data structure store used for API caching, session tokens, rate-limiting, and high-speed data retrieval.",
-            "pairs": "Node.js",
-            "parentSkill": "PostgreSQL"
+            "parentSkill": "PostgreSQL",
+            "usedIn": {
+              "projects": [],
+              "companies": ["Konnectify"]
+            }
           },
           {
             "id": "mysql",
@@ -459,7 +508,10 @@
             "use": 65,
             "color": "#7C3AED",
             "description": "Relational database certified via HackerRank SQL certification and hands-on MERN bootcamp training.",
-            "pairs": "PostgreSQL"
+            "usedIn": {
+              "projects": [],
+              "companies": ["HCL GUVI Zen"]
+            }
           }
         ]
       },
@@ -478,7 +530,10 @@
             "use": 55,
             "color": "#E11D48",
             "description": "Containerization tool for reproducible environments, multi-stage Dockerfiles, and local service orchestration.",
-            "pairs": "GitHub Actions"
+            "usedIn": {
+              "projects": [],
+              "companies": ["Konnectify"]
+            }
           },
           {
             "id": "githubactions",
@@ -489,7 +544,10 @@
             "use": 70,
             "color": "#E11D48",
             "description": "Automated CI/CD pipelines, automated testing, matrix build checks, and continuous deployment workflows.",
-            "pairs": "Docker"
+            "usedIn": {
+              "projects": [],
+              "companies": ["Konnectify"]
+            }
           },
           {
             "id": "git",
@@ -500,7 +558,11 @@
             "use": 95,
             "color": "#E11D48",
             "description": "Distributed version control, branch management, collaborative pull requests, interactive rebases, and merge workflows.",
-            "pairs": "GitHub Actions"
+            "pairs": "GitHub Actions",
+            "usedIn": {
+              "projects": ["SystemMapper", "ZapCart"],
+              "companies": ["Konnectify", "Chella Software"]
+            }
           },
           {
             "id": "vercel",
@@ -511,7 +573,10 @@
             "use": 85,
             "color": "#E11D48",
             "description": "Modern edge deployment platforms for Next.js and React frontends with automated preview environments and DNS setup.",
-            "pairs": "Next.js"
+            "usedIn": {
+              "projects": ["SystemMapper", "ZapCart", "Golden Gauge"],
+              "companies": []
+            }
           }
         ]
       },
@@ -530,7 +595,10 @@
             "use": 90,
             "color": "#0D9488",
             "description": "Mindset forged from 1+ year QA engineering at Chella Software. Functional testing, regression testing, and bug reproducibility.",
-            "pairs": "Jest"
+            "usedIn": {
+              "projects": [],
+              "companies": ["Chella Software", "Konnectify"]
+            }
           },
           {
             "id": "jest",
@@ -541,7 +609,11 @@
             "use": 75,
             "color": "#0D9488",
             "description": "JavaScript testing framework for unit tests, snapshot assertions, mock functions, and regression prevention.",
-            "pairs": "TypeScript"
+            "pairs": "TypeScript",
+            "usedIn": {
+              "projects": [],
+              "companies": ["Konnectify"]
+            }
           },
           {
             "id": "postman",
@@ -552,7 +624,10 @@
             "use": 90,
             "color": "#0D9488",
             "description": "API contract testing, environment variables, automated collection runners, and webhook debugging.",
-            "pairs": "REST APIs"
+            "usedIn": {
+              "projects": ["Golden Gauge"],
+              "companies": ["Konnectify", "Chella Software"]
+            }
           }
         ]
       },
@@ -571,7 +646,10 @@
             "use": 80,
             "color": "#D97706",
             "description": "Stripe-integrated billing platform at Konnectify: subscription plans, upgrade/downgrade flows, and multi-currency checkout.",
-            "pairs": "Next.js"
+            "usedIn": {
+              "projects": [],
+              "companies": ["Konnectify"]
+            }
           },
           {
             "id": "paypal",
@@ -582,7 +660,10 @@
             "use": 65,
             "color": "#D97706",
             "description": "Payment processing integration for ZapCart handling order captures, payment approvals, and secure checkout flows.",
-            "pairs": "Express.js"
+            "usedIn": {
+              "projects": ["ZapCart"],
+              "companies": []
+            }
           },
           {
             "id": "claudeapi",
@@ -593,7 +674,10 @@
             "use": 75,
             "color": "#D97706",
             "description": "LLM integration for developer tooling in SystemMapper, automated code analysis, and AI-accelerated workflows.",
-            "pairs": "TypeScript"
+            "usedIn": {
+              "projects": ["SystemMapper"],
+              "companies": []
+            }
           }
         ]
       }

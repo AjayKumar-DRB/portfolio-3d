@@ -93,12 +93,12 @@ export function HeroSection() {
           variants={containerVariants}
           initial="hidden"
           animate="show"
-          className="z-10 relative flex flex-col justify-center px-6 sm:px-10 lg:px-16 py-16 lg:py-24 text-left"
+          className="z-10 relative flex flex-col justify-start px-6 sm:px-10 lg:px-16 pt-6 sm:pt-8 lg:pt-10 pb-10 sm:pb-16 text-left"
         >
           {/* Stage Badge with Star Icon */}
           <motion.div
             variants={fadeUpItem}
-            className="inline-flex items-center gap-3 bg-white shadow-[3px_3px_0px_#0F172A] mb-6 px-3 py-1.5 border-2 border-slate-900 w-fit select-none"
+            className="inline-flex items-center gap-3 bg-white shadow-[3px_3px_0px_#0F172A] mb-5 px-3 py-1.5 border-2 border-slate-900 w-fit select-none"
           >
             <span className="font-bold text-md text-sky-500 select-none">👾</span>
             <span className="font-mono font-bold text-amber-500 text-md tracking-wider">
@@ -112,29 +112,26 @@ export function HeroSection() {
           {/* Subtitle / Kicker */}
           <motion.p
             variants={fadeUpItem}
-            className="mb-4 font-mono font-bold text-[12px] text-rose-600 sm:text-[15px] lg:text-[18px] uppercase tracking-[0.2em] select-none"
+            className="mb-3 font-mono font-bold text-[12px] text-rose-600 sm:text-[15px] lg:text-[18px] uppercase tracking-[0.2em] select-none"
           >
             {hero.subtitleLine}
           </motion.p>
 
-          {/* Huge Condensed Display Headline — reference: text-[17vw] sm:text-8xl lg:text-[7.5rem] xl:text-[8.5rem] leading-[0.85] */}
+          {/* Huge Condensed Display Headline */}
           <motion.h1
             ref={titleRef}
             variants={titleVariants}
-            className="text-left uppercase select-none"
+            className="text-left uppercase select-none font-display leading-[0.85] tracking-tight"
             style={{
-              fontFamily: 'var(--font-display)',
-              fontSize: 'clamp(5rem, 17vw, 11rem)',
-              lineHeight: 0.85,
-              letterSpacing: '-0.01em',
+              fontSize: 'clamp(2.6rem, 7.5vw, 6.25rem)',
             }}
           >
-            <span className="block -mb-5.5 font-bold text-slate-900">
+            <span className="block font-bold text-slate-900">
               <span className="glitch-text" data-text="AJAY KUMAR">
                 AJAY KUMAR
               </span>
             </span>
-            <span className="block mt-0 font-bold text-rose-600">
+            <span className="block font-bold text-rose-600 mt-0.5 sm:mt-1">
               <span className="glitch-text" data-text="DRB">
                 DRB
               </span>
@@ -144,7 +141,7 @@ export function HeroSection() {
           {/* Mission Box — reference: max-w-md mt-6 */}
           <motion.div
             variants={fadeUpItem}
-            className="bg-white shadow-[4px_4px_0px_#0F172A] mt-6 p-4 border-2 border-slate-900 w-full max-w-md text-left"
+            className="bg-white shadow-[4px_4px_0px_#0F172A] mt-4 sm:mt-5 p-4 border-2 border-slate-900 w-full max-w-md text-left"
           >
             <div className="flex justify-between items-center mb-2 pb-2 border-slate-200 border-b font-mono font-bold text-[9px]">
               <span className="flex items-center gap-2 text-rose-600">
@@ -164,7 +161,7 @@ export function HeroSection() {
           {/* Action Buttons — reference: mt-8 gap-4 px-6 py-3.5 */}
           <motion.div
             variants={fadeUpItem}
-            className="flex flex-wrap gap-4 mt-8"
+            className="flex flex-wrap gap-4 mt-5 sm:mt-6"
           >
             <a
               href={`#${hero.ctaPrimary.href}`}
@@ -189,7 +186,7 @@ export function HeroSection() {
           {/* Bottom Status Tags — reference: mt-10 font-pixel text-[9px] border-[2px] border-ink/30 */}
           <motion.div
             variants={fadeUpItem}
-            className="flex flex-wrap gap-2 mt-10 font-mono text-[9px] text-slate-900"
+            className="flex flex-wrap gap-2 mt-6 sm:mt-8 font-mono text-[9px] text-slate-900"
           >
             {hero.statusTags.map((tag) => (
               <span key={tag} className="px-2 py-1 border-2 border-slate-300">{tag}</span>

@@ -9,6 +9,10 @@
   --color-foreground: var(--text-primary);
   --font-sans: var(--font-body);
   --font-mono: var(--font-code);
+  --font-terminal: var(--font-vt323);
+  --font-heading: var(--font-press-start);
+  --font-subheading: var(--font-silkscreen);
+  --font-display: var(--font-bebas-neue);
 }
 
 /* ---- Animated Sword Cursor (Single Animated Custom Cursor) ---- */

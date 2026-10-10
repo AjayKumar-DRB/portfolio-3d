@@ -1,49 +1,17 @@
 'use client';
 
-import { useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SectionHeader } from '@/components/common/SectionHeader';
 import portfolioData from '@/data/portfolioData.json';
 import { careerChapters } from '@/data/career';
 
-gsap.registerPlugin(ScrollTrigger);
-
 export function StorySection() {
-  const sectionRef = useRef<HTMLElement>(null);
   const { education, certifications, strengths, philosophy } = portfolioData;
-
-  useEffect(() => {
-    if (!sectionRef.current) return;
-
-    const ctx = gsap.context(() => {
-      const bars = gsap.utils.toArray<HTMLElement>('.career-bar-fill');
-      bars.forEach((bar) => {
-        gsap.from(bar, {
-          width: '0%',
-          duration: 1.1,
-          ease: 'steps(10)',
-          scrollTrigger: {
-            trigger: bar,
-            start: 'top 85%',
-            once: true,
-          },
-        });
-      });
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
 
   return (
     <section
-      ref={sectionRef}
       id="story"
-      className="relative z-10 py-16 md:py-24 border-b-2 border-slate-900"
-      style={{
-        background: '#F5F2EB',
-      }}
+      className="relative z-10 py-16 md:py-24 border-b-2 border-slate-900 bg-[#F5F2EB]"
     >
       <div className="container mx-auto px-6">
         <SectionHeader
@@ -57,10 +25,6 @@ export function StorySection() {
         {/* Career Cards Grid — 3x2 on large screens */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {careerChapters.map((chapter, i) => {
-            // Bar fill: increases along career progression
-            const barFill = [62, 70, 78, 84, 90, 96][i] ?? 80;
-            const barColor = chapter.accentColor;
-
             return (
               <motion.div
                 key={chapter.id}
@@ -72,37 +36,34 @@ export function StorySection() {
               >
                 <div>
                   {/* Level Tag & Period Header */}
-                  <div className="flex items-center justify-between text-[10px] font-mono font-bold mb-3 pb-2 border-b border-slate-300">
+                  <div className="flex items-center justify-between text-xs font-mono font-bold mb-3 pb-2 border-b border-slate-300">
                     <span className="text-amber-600 tracking-wider">
                       LV.0{chapter.level} · {chapter.period}
                     </span>
-                    <span
-                      className="font-bold tracking-wider text-[9px]"
-                      style={{ color: chapter.accentColor }}
-                    >
-                      {chapter.retroTitle}
+                    <span className="text-slate-500 tracking-wider text-[11px] uppercase">
+                      CHAPTER 0{chapter.level}
                     </span>
                   </div>
 
-                  {/* Card Title */}
-                  <h3 className="font-mono text-xs sm:text-[13px] font-bold text-slate-900 tracking-tight uppercase mb-1">
+                  {/* Card Title using VT323 pixel font */}
+                  <h3 className="font-terminal text-2xl font-bold text-slate-900 tracking-wide uppercase mb-1 leading-none">
                     {chapter.title}
                   </h3>
-                  <p className="font-mono text-[10px] text-slate-500 mb-3 tracking-wide">
+                  <p className="font-mono text-xs text-slate-500 mb-3 tracking-wide font-medium">
                     {chapter.role} — {chapter.company}
                   </p>
 
                   {/* Description */}
-                  <p className="font-mono text-xs text-slate-700 leading-relaxed">
+                  <p className="font-mono text-sm text-slate-700 leading-relaxed">
                     {chapter.description}
                   </p>
 
                   {/* Highlights */}
-                  <ul className="mt-3 space-y-1">
+                  <ul className="mt-3.5 space-y-1.5">
                     {chapter.highlights.slice(0, 3).map((h) => (
                       <li
                         key={h}
-                        className="font-mono text-[10px] text-slate-600 flex items-start gap-1.5"
+                        className="font-mono text-xs text-slate-600 flex items-start gap-1.5 leading-normal"
                       >
                         <span className="text-rose-500 mt-0.5 flex-shrink-0">▸</span>
                         {h}
@@ -111,17 +72,21 @@ export function StorySection() {
                   </ul>
                 </div>
 
-                {/* Segmented Energy Progress Bar at Bottom */}
-                <div className="mt-6 pt-3 border-t border-slate-200">
-                  <div className="w-full h-3 bg-white border-2 border-slate-900 p-[1px] overflow-hidden">
-                    <div
-                      className="career-bar-fill h-full transition-all duration-700"
-                      style={{
-                        width: `${barFill}%`,
-                        backgroundColor: barColor,
-                      }}
-                    />
-                  </div>
+                {/* Retro Milestone Stamp at Bottom (Replacing misleading progress bar) */}
+                <div className="mt-6 pt-3 border-t border-slate-300 flex items-center justify-between font-mono">
+                  <span
+                    className="px-2.5 py-1 border border-slate-900 font-bold uppercase tracking-wider text-[10px] shadow-[1px_1px_0px_#0F172A]"
+                    style={{
+                      backgroundColor: `${chapter.accentColor}18`,
+                      color: chapter.accentColor,
+                      borderColor: chapter.accentColor,
+                    }}
+                  >
+                    {chapter.retroTitle}
+                  </span>
+                  <span className="text-slate-500 font-mono text-[11px] font-semibold tracking-wider">
+                    {chapter.highlights.length} MILESTONES
+                  </span>
                 </div>
               </motion.div>
             );
@@ -134,11 +99,11 @@ export function StorySection() {
           <div className="bg-white border-2 border-slate-900 shadow-[4px_4px_0px_#0F172A] p-5 sm:p-6">
             <div className="flex items-center gap-2 mb-2">
               <span className="text-amber-500 font-bold text-xs">★</span>
-              <span className="font-mono text-[9px] font-bold text-rose-600 tracking-widest uppercase">
+              <span className="font-mono text-[10px] font-bold text-rose-600 tracking-widest uppercase">
                 DEVELOPER PHILOSOPHY
               </span>
             </div>
-            <p className="font-mono text-slate-800 text-xs sm:text-[13px] leading-relaxed italic border-l-2 border-rose-600 pl-4 py-1">
+            <p className="font-mono text-slate-800 text-sm sm:text-base leading-relaxed italic border-l-2 border-rose-600 pl-4 py-1">
               &ldquo;{philosophy}&rdquo;
             </p>
           </div>
@@ -151,49 +116,49 @@ export function StorySection() {
                 <div className="flex items-center justify-between pb-2 mb-4 border-b border-slate-200">
                   <div className="flex items-center gap-2">
                     <span className="text-sky-500 font-bold text-xs">◆</span>
-                    <h4 className="font-mono font-bold text-[10px] text-slate-900 uppercase tracking-wider">
+                    <h4 className="font-mono font-bold text-xs text-slate-900 uppercase tracking-wider">
                       EDUCATION & CREDENTIALS
                     </h4>
                   </div>
-                  <span className="font-mono text-[8px] font-bold bg-sky-100 text-sky-800 px-2 py-0.5 border border-slate-900">
+                  <span className="font-mono text-[9px] font-bold bg-sky-100 text-sky-800 px-2 py-0.5 border border-slate-900">
                     VERIFIED
                   </span>
                 </div>
 
                 {/* Degree Box */}
                 <div className="p-3 bg-[#F5F2EB] border-2 border-slate-900 mb-4 shadow-[2px_2px_0px_#0F172A]">
-                  <div className="flex items-center justify-between text-[9px] font-mono text-amber-700 font-bold mb-1">
+                  <div className="flex items-center justify-between text-[10px] font-mono text-amber-700 font-bold mb-1">
                     <span>{education.period}</span>
-                    <span className="bg-emerald-600 text-white px-1.5 py-0.2 text-[8px] font-mono font-bold">
+                    <span className="bg-emerald-600 text-white px-2 py-0.5 text-[9px] font-mono font-bold">
                       GPA {education.gpa}
                     </span>
                   </div>
-                  <h5 className="font-mono text-xs font-bold text-slate-900 uppercase">
+                  <h5 className="font-mono text-sm font-bold text-slate-900 uppercase">
                     {education.degree}
                   </h5>
-                  <p className="font-mono text-[10px] text-slate-600 mt-0.5">
+                  <p className="font-mono text-xs text-slate-600 mt-0.5">
                     {education.institution} · {education.location}
                   </p>
-                  <p className="font-mono text-[9px] text-emerald-700 font-bold mt-1">
+                  <p className="font-mono text-[11px] text-emerald-700 font-bold mt-1">
                     ★ {education.distinction}
                   </p>
                 </div>
 
                 {/* Certifications List */}
                 <div className="space-y-2">
-                  <span className="font-mono text-[8px] text-slate-400 font-bold uppercase tracking-wider block">
+                  <span className="font-mono text-[9px] text-slate-400 font-bold uppercase tracking-wider block">
                     CERTIFICATIONS & ACCREDITATIONS
                   </span>
                   {certifications.map((cert) => (
                     <div
                       key={cert.title}
-                      className="p-2.5 bg-slate-50 border border-slate-900 flex items-center justify-between font-mono text-[10px]"
+                      className="p-2.5 bg-slate-50 border border-slate-900 flex items-center justify-between font-mono text-xs"
                     >
                       <div>
                         <span className="font-bold text-slate-900 block">{cert.title}</span>
-                        <span className="text-slate-500 text-[9px]">{cert.issuer}</span>
+                        <span className="text-slate-500 text-[10px]">{cert.issuer}</span>
                       </div>
-                      <span className="text-[9px] font-bold text-rose-600 bg-rose-50 border border-slate-300 px-1.5 py-0.5">
+                      <span className="text-[10px] font-bold text-rose-600 bg-rose-50 border border-slate-300 px-2 py-0.5">
                         {cert.year}
                       </span>
                     </div>
@@ -207,11 +172,11 @@ export function StorySection() {
               <div className="flex items-center justify-between pb-2 mb-4 border-b border-slate-200">
                 <div className="flex items-center gap-2">
                   <span className="text-emerald-500 font-bold text-xs">❖</span>
-                  <h4 className="font-mono font-bold text-[10px] text-slate-900 uppercase tracking-wider">
+                  <h4 className="font-mono font-bold text-xs text-slate-900 uppercase tracking-wider">
                     CORE ENGINEERING STRENGTHS
                   </h4>
                 </div>
-                <span className="font-mono text-[8px] font-bold bg-emerald-100 text-emerald-800 px-2 py-0.5 border border-slate-900">
+                <span className="font-mono text-[9px] font-bold bg-emerald-100 text-emerald-800 px-2 py-0.5 border border-slate-900">
                   {strengths.length} TRAITS
                 </span>
               </div>
@@ -222,10 +187,10 @@ export function StorySection() {
                     key={s.id}
                     className="p-2.5 bg-[#F5F2EB] border border-slate-900 shadow-[2px_2px_0px_#0F172A]"
                   >
-                    <span className="font-mono font-bold text-[10px] text-rose-600 block uppercase mb-1">
+                    <span className="font-mono font-bold text-xs text-rose-600 block uppercase mb-1">
                       {s.label}
                     </span>
-                    <p className="font-mono text-[9px] text-slate-700 leading-snug">
+                    <p className="font-mono text-[11px] text-slate-700 leading-snug">
                       {s.description}
                     </p>
                   </div>

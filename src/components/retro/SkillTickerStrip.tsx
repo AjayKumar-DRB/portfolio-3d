@@ -7,13 +7,7 @@ const tickerItems = portfolioData.softSkillStrip;
 export function SkillTickerStrip() {
   return (
     <div
-      className="w-full relative z-20 overflow-hidden select-none"
-      style={{
-        background: '#E11D48',
-        borderTop: '2px solid #0F172A',
-        borderBottom: '2px solid #0F172A',
-        boxShadow: '0 2px 8px rgba(225, 29, 72, 0.25)',
-      }}
+      className="w-full relative z-20 overflow-hidden select-none bg-rose-600 border-y-2 border-slate-900 shadow-[0_2px_8px_rgba(225,29,72,0.25)]"
       aria-label="Soft skills and mission chapters ticker"
     >
       <div className="py-2.5 flex items-center overflow-hidden">
@@ -22,17 +16,16 @@ export function SkillTickerStrip() {
           {[...tickerItems, ...tickerItems].map((item, idx) => (
             <div
               key={idx}
-              className="inline-flex items-center gap-3 px-3"
-              style={{
-                fontFamily: 'var(--font-heading)',
-                fontSize: '10px',
-                color: '#FFFFFF',
-                letterSpacing: '0.12em',
-                fontWeight: 700,
-              }}
+              className="inline-flex items-center gap-2.5 px-3 font-heading text-xs text-white tracking-widest font-bold"
             >
-              <span className="text-amber-300 font-bold">★</span>
-              <span>{item}</span>
+              <svg
+                className="w-3.5 h-3.5 text-amber-300 fill-current shrink-0"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <span className="leading-none">{item}</span>
             </div>
           ))}
         </div>
